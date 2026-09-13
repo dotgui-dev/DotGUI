@@ -16,8 +16,8 @@
   </head>
   <body>
     <nav>
-      <button type="button" class="nav-btn" aria-current="page" onclick="location.href='start.html'">
-        <img src="media/nav-buttons/home.svg" width="40px" height="40px">
+      <button type="button" class="nav-btn nav-home-btn" aria-current="page"  onclick="location.href='start.html'">
+        <img src="favicon.ico" width="40px" height="40px" alt="Home">
       </button>
       <button type="button" class="nav-btn" onclick="window.location.href='select.html'">
         <img src="media/nav-buttons/game.svg" width="40px" height="40px">
@@ -35,93 +35,65 @@
         <img src="media/nav-buttons/disclaimer.svg" width="40px" height="40px">
       </button>
     </nav>
+  <style>
+    #homestuff { display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; min-height:60vh; justify-content:center; }
+    .search-container { display:flex; gap:8px; justify-content:center; align-items:center; width:100%; max-width:560px; }
+    .search-container input { flex:1; background:#022c3a; color:#b1e8fc; border:none; border-radius:10px; padding:0.8em 1.5em; font-family:Outfit,sans-serif; font-size:1.1em; outline:none; }
+    .search-container input::placeholder { color:#066b99; }
+    .search-container input:focus { box-shadow:0 0 0 2px #00eaff; }
+    .search-container button { background:rgb(0,0,0); color:rgb(0,242,255); border:none; border-radius:10px; padding:0.8em 1.4em; font-family:Outfit,sans-serif; font-size:18px; cursor:pointer; }
+    .button-container { display:flex; gap:15px; justify-content:center; align-items:center; flex-wrap:wrap; }
+    .button-container button { width:60px; height:60px; padding:10px; border-radius:12px; display:flex; justify-content:center; align-items:center; background:rgb(0,0,0); border:none; cursor:pointer; }
+    .button-container button img { width:40px; height:40px; }
+    .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#00f2ff; border:1px solid rgba(0,242,255,0.3); }
+  </style>
   <div id="main">
-    <main>
-      <h1>DotGUI | Patch Update | 9/11/2026 </h1>
+    <main id="homestuff">
+      <img src="media/full.png" width="250px" alt="DotGUI Logo">
+      <span class="update-badge">UI Revamp • 9/12/2026</span>
+      <div class="search-container">
+        <input id="bar" type="text" placeholder="Search or enter URL..." autocomplete="off" spellcheck="false">
+        <button onclick="nav()">Go</button>
+      </div>
+      <div class="button-container">
+        <button onclick="navTo('https://youtube.com')"><img src="media/quick/datube.svg" alt="YouTube"></button>
+        <button onclick="navTo('https://web.spotify.com')"><img src="media/quick/bigtify.svg" alt="Spotify"></button>
+        <button onclick="navTo('https://github.com')"><img src="media/quick/github.svg" alt="Github"></button>
+      </div>
       <p id="random-text" style="font-size:1.2em; margin:20px 0;"></p>
-      <p>Join our <a onclick=window.location.href="https://discord.com/invite/U8tT8AazXb">community server</a> to report problems and get more links. Make sure to star DotGUI on GitHub if you fork it!</p>
-      <div id="games">
-      <div id="recent" style="display:none;">
-        <h2>Recently Played:</h2>
-        <div id="recent-buttons"></div>
-      </div>
-      </div>
+      <p>Join our <a onclick=window.location.href="https://discord.com/invite/U8tT8AazXb">community server</a>! Make sure to star DotGUI on GitHub if you fork it!</p>
     <script>
+        function navTo(url) {
+            try { sessionStorage.setItem("searchQuery", url); } catch(e) {}
+            window.location.href = "search.html?q=" + encodeURIComponent(url);
+        }
+        function nav() {
+            var q = document.getElementById("bar").value.trim();
+            if (!q) return;
+            var target;
+            if (q.indexOf(" ") === -1 && q.indexOf(".") !== -1) {
+                target = q.startsWith("http") ? q : "https://" + q;
+            } else {
+                target = "https://html.duckduckgo.com/html/?q=" + encodeURIComponent(q);
+            }
+            try { sessionStorage.setItem("searchQuery", target); } catch(e) {}
+            window.location.href = "search.html?q=" + encodeURIComponent(q);
+        }
+        document.getElementById("bar").addEventListener("keydown", function(e){ if(e.key==="Enter") nav(); });
         const texts = [
-            '"Work on DotGUI, or quit and play Roblox?" - DotLYHiyou, probably',
-            "Did you know? DotGUI used to be the Zenithub Rework Update, but then I thought it through and realized throwing a rebrand in would be cool. Yeah, so much for being cool...",
-            "If I were to remake DotGUI, I would make sure a search would be available on day one.",
-            "Militant is the best TDS starter tower when you start the game. Change my mind.",
-            "Who needs global announcements that very easily get hijacked when you have these?",
-            "PLEASE stop using the request form for problems.",
-            "There is like 3-4 people who prob still check the community server that aren't bots. Please join it.",
-            "I have a lot of ideas for DotGUI, but I don't have the time to implement them all.",
-            "I wish people would use the latest versions of DotGUI, but with the way I built this from the ground up, Its inevitable.",
+            '"Work on DotGUI or play Roblox?" - me, probably',
+            "Did you know? DotGUI would've been 'Zenithub Rework', rebrand seemed cool. So much for that...",
+            "If I remade DotGUI, search would be day one fr",
+            "Militant is the best TDS starter, change my mind",
+            "Who needs announcements when you got these?",
+            "Stop using the request form for problems fr",
+            "Like 3 people still check Discord, just join it",
+            "Too many ideas, not enough time tbh",
+            "Wish people used the latest DotGUI, but oh well",
         ];
         document.getElementById("random-text").textContent = texts[Math.floor(Math.random() * texts.length)];
     </script>
-    <script>
-        (function() {
-            var recent = [];
-            try { recent = JSON.parse(localStorage.getItem('dotgui_recent') || '[]'); } catch (e) { recent = []; }
-            if (!Array.isArray(recent) || recent.length < 2) return;
-            recent = recent.slice(0, 4);
-            var box = document.getElementById('recent');
-            var btns = document.getElementById('recent-buttons');
-            function showFallback() {
-                btns.innerHTML = '';
-                recent.forEach(function(r) {
-                    var b = document.createElement('button');
-                    b.className = 'button';
-                    b.textContent = r.title || r.page;
-                    b.onclick = function() { window.location.href = r.page; };
-                    btns.appendChild(b);
-                });
-                box.style.display = '';
-            }
-            fetch('select.html').then(function(res) {
-                if (!res.ok) throw new Error('fetch failed');
-                return res.text();
-            }).then(function(html) {
-                var doc = new DOMParser().parseFromString(html, 'text/html');
-                var map = {};
-                doc.querySelectorAll('#game-buttons .button').forEach(function(b) {
-                    var oc = b.getAttribute('onclick') || '';
-                    var m = oc.match(/pages\/game-pages\/[^']+/);
-                    if (!m) return;
-                    var img = b.querySelector('img');
-                    map[m[0]] = {
-                        title: b.getAttribute('data-title') || (img && img.alt) || m[0],
-                        img: img ? img.getAttribute('src') : null,
-                        alt: img ? (img.getAttribute('alt') || '') : ''
-                    };
-                });
-                btns.innerHTML = '';
-                var shown = 0;
-                recent.forEach(function(r) {
-                    var info = map[r.page];
-                    if (!info) return;
-                    var b = document.createElement('button');
-                    b.className = 'button';
-                    b.setAttribute('data-title', info.title);
-                    b.onclick = (function(p) { return function() { window.location.href = p; }; })(r.page);
-                    if (info.img) {
-                        var im = document.createElement('img');
-                        im.setAttribute('src', info.img);
-                        im.setAttribute('alt', info.alt || info.title);
-                        im.setAttribute('style', 'width:130px;height:130px;');
-                        b.appendChild(im);
-                    } else {
-                        b.textContent = info.title;
-                    }
-                    btns.appendChild(b);
-                    shown++;
-                });
-                if (shown < 2) return;
-                box.style.display = '';
-            }).catch(showFallback);
-        })();
-    </script>
+
     </main>
   </div>
   <script>
@@ -176,8 +148,6 @@
     })();
   </script>
   <footer>
-    <p>Made by DotLYHiyou on Github. </p>
-    <p>There is no one other than listed contributors on the github page that are affiliated with this project.</p>
-    <p>If someone claims otherwise, close that tab and haul ass out of there.</p>
+    <p>Made by DotLYHiyou on GitHub. Only listed contributors are affiliated. If someone claims otherwise, leave.</p>
   </footer>
 </html>

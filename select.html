@@ -16,8 +16,8 @@
   </head>
   <body>
     <nav>
-      <button type="button" class="nav-btn" onclick="location.href='start.html'">
-        <img src="media/nav-buttons/home.svg" width="40px" height="40px">
+      <button type="button" class="nav-btn nav-home-btn"  onclick="location.href='start.html'">
+        <img src="favicon.ico" width="40px" height="40px" alt="Home">
       </button>
       <button type="button" class="nav-btn" aria-current="page" onclick="window.location.href='select.html'">
         <img src="media/nav-buttons/game.svg" width="40px" height="40px">
@@ -56,246 +56,307 @@
         <button class="button" id="random-game" onclick="randomGame()">
           <img src="media/random.png" alt="Random Game" style="width:130px;height:130px;">
         </button>
+        <div id="games" style="margin-top:1rem;">
+          <div id="recent" style="display:none;">
+            <h2>Recently Played:</h2>
+            <div id="recent-buttons"></div>
+          </div>
+        </div>
         <div id="game-buttons">
           <button class="button" data-title="Fruit Ninja" onclick="window.location.href='pages/game-pages/fruitninja.html'">
-            <img src="media/buttons/fruit.webp" alt="Fruit Ninja" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/fruit.webp" alt="Fruit Ninja" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="1v1.lol" onclick="window.location.href='pages/game-pages/1v1lol.html'">
-            <img src="media/buttons/1v1.jpeg" alt="1v1.lol" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/1v1.jpeg" alt="1v1.lol" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Taisei Project" onclick="window.location.href='pages/game-pages/taiseiproject.html'">
-            <img src="media/buttons/taisei.png" alt="Taisei Project" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/taisei.png" alt="Taisei Project" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Metroid Fusion" onclick="window.location.href='pages/game-pages/metroidfusion.html'">
-            <img src="media/buttons/metroid.jpg" alt="Metroid Fusion" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/metroid.jpg" alt="Metroid Fusion" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Celeste" onclick="window.location.href='pages/game-pages/celeste.html'">
-            <img src="media/buttons/celeste.jpg" alt="Celeste" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/celeste.jpg" alt="Celeste" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Slope" onclick="window.location.href='pages/game-pages/slope.html'">
-            <img src="media/buttons/slope.jpg" alt="Slope" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/slope.jpg" alt="Slope" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Slope Plus" onclick="window.location.href='pages/game-pages/slopeplus.html'">
-            <img src="media/buttons/slopeplus.png" alt="Slope Plus" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/slopeplus.png" alt="Slope Plus" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Slope 2 Player" onclick="window.location.href='pages/game-pages/slope2player.html'">
-            <img src="media/buttons/slope2.png" alt="Slope 2 Player" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/slope2.png" alt="Slope 2 Player" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Eaglercraft 1.12.2" onclick="window.location.href='pages/game-pages/eaglercraft122.html'">
-            <img src="media/buttons/eagler.png" alt="Eaglercraft 1.12.2" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/eagler.png" alt="Eaglercraft 1.12.2" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Mario Combat" onclick="window.location.href='pages/game-pages/mariocombat.html'">
-            <img src="media/buttons/mariocombat.png" alt="Mario Combat" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/mariocombat.png" alt="Mario Combat" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Super Mario Bros" onclick="window.location.href='pages/game-pages/supermariobros.html'">
-            <img src="media/buttons/mariobros.webp" alt="Super Mario Bros" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/mariobros.webp" alt="Super Mario Bros" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Mario Kart 64" onclick="window.location.href='pages/game-pages/mariokart64.html'">
-            <img src="media/buttons/mariokart.jpeg" alt="Mario Kart 64" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/mariokart.jpeg" alt="Mario Kart 64" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Baldi's Basics" onclick="window.location.href='pages/game-pages/baldibasics.html'">
-            <img src="media/buttons/baldi.png" alt="Baldi's Basics" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/baldi.png" alt="Baldi's Basics" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Vex" onclick="window.location.href='pages/game-pages/vex.html'">
-            <img src="media/buttons/vex.png" alt="Vex" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/vex.png" alt="Vex" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Vex 2" onclick="window.location.href='pages/game-pages/vex2.html'">
-            <img src="media/buttons/vex2.jpeg" alt="Vex 2" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/vex2.jpeg" alt="Vex 2" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Vex 3" onclick="window.location.href='pages/game-pages/vex3.html'">
-            <img src="media/buttons/vex3.png" alt="Vex 3" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/vex3.png" alt="Vex 3" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Volley Random" onclick="window.location.href='pages/game-pages/volleyrandom.html'">
-            <img src="media/buttons/volley.png" alt="Volley Random" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/volley.png" alt="Volley Random" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Soccer Random" onclick="window.location.href='pages/game-pages/soccerrandom.html'">
-            <img src="media/buttons/soccer.png" alt="Soccer Random" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/soccer.png" alt="Soccer Random" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Basket Random" onclick="window.location.href='pages/game-pages/basketrandom.html'">
-            <img src="media/buttons/basket.png" alt="Basket Random" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/basket.png" alt="Basket Random" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Boxing Random" onclick="window.location.href='pages/game-pages/boxingrandom.html'">
-            <img src="media/buttons/boxing.png" alt="Boxing Random" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/boxing.png" alt="Boxing Random" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Nuts" onclick="window.location.href='pages/game-pages/nutsnbolts.html'">
-            <img src="media/buttons/nuts.png" alt="Nuts" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/nuts.png" alt="Nuts" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Cookie Clicker" onclick="window.location.href='pages/game-pages/cookieclicker.html'">
-            <img src="media/buttons/cookieclicker.jpg" alt="Cookie Clicker" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/cookieclicker.jpg" alt="Cookie Clicker" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Super Smash Bros" onclick="window.location.href='pages/game-pages/supersmashbros.html'">
-            <img src="media/buttons/supersmashbros.jpg" alt="Super Smash Bros" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/supersmashbros.jpg" alt="Super Smash Bros" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Soccer Skills World Cup" onclick="window.location.href='pages/game-pages/soccerskills.html'">
-            <img src="media/buttons/cupofworld.png" alt="Soccer Skills World Cup" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/cupofworld.png" alt="Soccer Skills World Cup" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="N-Gon" onclick="window.location.href='pages/game-pages/ngon.html'">
-            <img src="media/buttons/ngon.jpeg" alt="N-Gon" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ngon.jpeg" alt="N-Gon" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Drift Hunters" onclick="window.location.href='pages/game-pages/drifthunters.html'">
-            <img src="media/buttons/drifthunters.jpeg" alt="Drift Hunters" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/drifthunters.jpeg" alt="Drift Hunters" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Subway Surfers" onclick="window.location.href='pages/game-pages/subwaysurferswinterholiday.html'">
-            <img src="media/buttons/wintersurf.webp" alt="Subway Surfers: Winter Holiday" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/wintersurf.webp" alt="Subway Surfers: Winter Holiday" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Subway Surfers" onclick="window.location.href='pages/game-pages/subwaysurfersmiami.html'">
-            <img src="media/buttons/subwaymiami.webp" alt="Subway Surfers: Miami" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/subwaymiami.webp" alt="Subway Surfers: Miami" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Rooftop Snipers" onclick="window.location.href='pages/game-pages/rooftopsnipers.html'">
-            <img src="media/buttons/rooftop.png" alt="Rooftop Snipers" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/rooftop.png" alt="Rooftop Snipers" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Rooftop Snipers" onclick="window.location.href='pages/game-pages/rooftopsnipers2.html'">
-            <img src="media/buttons/rooftop2.jpeg" alt="Rooftop Snipers 2" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/rooftop2.jpeg" alt="Rooftop Snipers 2" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Bitlife" onclick="window.location.href='pages/game-pages/bitlife.html'">
-            <img src="media/buttons/bitlife.png" alt="Bitlife" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/bitlife.png" alt="Bitlife" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Fancy Pants Adventure" onclick="window.location.href='pages/game-pages/fancypantsadventure.html'">
-            <img src="media/buttons/fancy.png" alt="Fancy Pants Adventure" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/fancy.png" alt="Fancy Pants Adventure" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Line Rider" onclick="window.location.href='pages/game-pages/linerider.html'">
-            <img src="media/buttons/linerider.png" alt="Line Rider" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/linerider.png" alt="Line Rider" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Deltarune" onclick="window.location.href='pages/game-pages/deltarune.html'">
-            <img src="media/buttons/deltarune.webp" alt="Deltarune" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/deltarune.webp" alt="Deltarune" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Unfair Undyne" onclick="window.location.href='pages/game-pages/unfairundyne.html'">
-            <img src="media/buttons/Undyne_face.webp" alt="Unfair Undyne" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/Undyne_face.webp" alt="Unfair Undyne" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Ultrakill" onclick="window.location.href='pages/game-pages/ultrakill.html'">
-            <img src="media/buttons/ultrakill.jpeg" alt="Ultrakill" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ultrakill.jpeg" alt="Ultrakill" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonfirered.html'">
-            <img src="media/buttons/pokefire.jpg" alt="Pokemon Fire Red" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/pokefire.jpg" alt="Pokemon Fire Red" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonleafgreen.html'">
-            <img src="media/buttons/leafgreen.jpg" alt="Pokemon Leaf Green" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/leafgreen.jpg" alt="Pokemon Leaf Green" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonunbound.html'">
-            <img src="media/buttons/pokeunbound.webp" alt="Pokemon Unbound" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/pokeunbound.webp" alt="Pokemon Unbound" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonstadium.html'">
-            <img src="media/buttons/stadium.webp" alt="Pokemon Stadium" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/stadium.webp" alt="Pokemon Stadium" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonemerald.html'">
-            <img src="media/buttons/emerald.jpg" alt="Pokemon Emerald" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/emerald.jpg" alt="Pokemon Emerald" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonemeraldrg.html'">
-            <img src="media/buttons/rouge.png" alt="Pokemon Emerald Rogue" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/rouge.png" alt="Pokemon Emerald Rogue" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Pokemon" onclick="window.location.href='pages/game-pages/pokemonruby.html'">
-            <img src="media/buttons/ruby.png" alt="Pokemon Ruby" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ruby.png" alt="Pokemon Ruby" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Sonic" onclick="window.location.href='pages/game-pages/sonicthehedgehog.html'">
-            <img src="media/buttons/sonic.jpeg" alt="Sonic the Hedgehog" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/sonic.jpeg" alt="Sonic the Hedgehog" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Riddle School" onclick="window.location.href='pages/game-pages/riddleschool.html'">
-            <img src="media/buttons/riddle.jpeg" alt="Riddle School" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/riddle.jpeg" alt="Riddle School" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Red Ball" onclick="window.location.href='pages/game-pages/redball.html'">
-            <img src="media/buttons/redball.webp" alt="Red Ball" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/redball.webp" alt="Red Ball" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="OvO" onclick="window.location.href='pages/game-pages/ovo.html'">
-            <img src="media/buttons/ovo.png" alt="OvO" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ovo.png" alt="OvO" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="OvO 2" onclick="window.location.href='pages/game-pages/ovo2.html'">
-            <img src="media/buttons/ovo2.webp" alt="OvO 2" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ovo2.webp" alt="OvO 2" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Fifa 11" onclick="window.location.href='pages/game-pages/fifa11.html'">
-            <img src="media/buttons/fifa11.jpg" alt="Fifa 11" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/fifa11.jpg" alt="Fifa 11" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Funny Shooter 2" onclick="window.location.href='pages/game-pages/funnyshooter2.html'">
-            <img src="media/buttons/funny-shooter-2.jpg" alt="Funny Shooter 2" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/funny-shooter-2.jpg" alt="Funny Shooter 2" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Retro Bowl" onclick="window.location.href='pages/game-pages/retrobowl.html'">
-            <img src="media/buttons/unnamed.png" alt="Retro Bowl" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/unnamed.png" alt="Retro Bowl" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Tiny Fishing" onclick="window.location.href='pages/game-pages/tinyfishing.html'">
-            <img src="media/buttons/tiny-fishing-square-icon.png" alt="Tiny Fishing" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/tiny-fishing-square-icon.png" alt="Tiny Fishing" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Doom" onclick="window.location.href='pages/game-pages/doom.html'">
-            <img src="media/buttons/doom.jpeg" alt="Doom" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/doom.jpeg" alt="Doom" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Among Us" onclick="window.location.href='pages/game-pages/amongus.html'">
-            <img src="media/buttons/Among_Us.webp" alt="Among Us" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/Among_Us.webp" alt="Among Us" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Geometry Dash" onclick="window.location.href='pages/game-pages/geometrydash.html'">
-            <img src="media/buttons/geometry.png" alt="Geometry Dash" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/geometry.png" alt="Geometry Dash" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Geometry Dash Demake" onclick="window.location.href='pages/game-pages/geodashdemake.html'">
-            <img src="media/buttons/geodashdemake.png" alt="Geometry Dash Demake" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/geodashdemake.png" alt="Geometry Dash Demake" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Crossy Roads" onclick="window.location.href='pages/game-pages/crossyroads.html'">
-            <img src="media/buttons/Crossy_Road_icon.jpeg" alt="Geometry Dash" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/Crossy_Road_icon.jpeg" alt="Geometry Dash" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="MotoX3M" onclick="window.location.href='pages/game-pages/motox3m.html'">
-            <img src="media/buttons/motox3m.png" alt="MotoX3M" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/motox3m.png" alt="MotoX3M" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Omori" onclick="window.location.href='pages/game-pages/omori.html'">
-            <img src="media/buttons/omori.jpeg" alt="Omori" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/omori.jpeg" alt="Omori" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Bad Time Simulator" onclick="window.location.href='pages/game-pages/badtimesimulator.html'">
-            <img src="media/buttons/badtime.webp" alt="Bad Time Simulator" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/badtime.webp" alt="Bad Time Simulator" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="CSGO Clicker" onclick="window.location.href='pages/game-pages/csgoclicker.html'">
-            <img src="media/buttons/csgo.jpeg" alt="CSGO Clicker" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/csgo.jpeg" alt="CSGO Clicker" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Yume Nikki" onclick="window.location.href='pages/game-pages/yumenikki.html'">
-            <img src="media/buttons/yume-nikki.webp" alt="Yume Nikki" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/yume-nikki.webp" alt="Yume Nikki" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="FNF" onclick="window.location.href='pages/game-pages/fnf.html'">
-            <img src="media/buttons/fnf.webp" alt="Friday Night Funkin" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/fnf.webp" alt="Friday Night Funkin" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Snowbattleio" onclick="window.location.href='pages/game-pages/snowbattle.html'">
-            <img src="media/buttons/snowbattle.jpg" alt="Snow Battle IO" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/snowbattle.jpg" alt="Snow Battle IO" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="The Legend of Zelda: Ocarina of Time" onclick="window.location.href='pages/game-pages/ocarina.html'">
-            <img src="media/buttons/ocorina.jpg" alt="The Legend of Zelda: Ocarina of Time" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/ocorina.jpg" alt="The Legend of Zelda: Ocarina of Time" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Karlson" onclick="window.location.href='pages/game-pages/karl.html'">
-            <img src="media/buttons/karl.jpg" alt="Karlson" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/karl.jpg" alt="Karlson" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Metal Gear Solid" onclick="window.location.href='pages/game-pages/metal.html'">
-            <img src="media/buttons/metal.jpg" alt="Metal Gear Solid" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/metal.jpg" alt="Metal Gear Solid" style="width:130px;height:130px;">
           </button>
           <button class="button" data-title="Jetpack Joyride" onclick="window.location.href='pages/game-pages/jet.html'">
-            <img src="media/buttons/jetpack.jpg" alt="Jetpack Joyride" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/jetpack.jpg" alt="Jetpack Joyride" style="width:130px;height:130px;">
           </button>
-          <!--
           <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf.html'">
-            <img src="media/buttons/fnaf.jpg" alt="Five Nights at Freddy's" style="width:130px;height:130px;">
+            <img loading="lazy" src="media/buttons/fnaf.jpg" alt="Five Nights at Freddy's" style="width:130px;height:130px;">
           </button>
-
-          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf2.html'"">Five Nights at Freddy's 2</button>
-          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf3.html'"">Five Nights at Freddy's 3</button>
-          <button class="button" data-title="FNAF" onclick="window.location.href='pages/game-pages/fnaf4.html'"">Five Nights at Freddy's 4</button>
-          <button class="button" data-title="Hollow Knight" onclick="window.location.href='pages/game-pages/hollow.html'"">Hollow Knight</button>
-          <button class="button" data-title="Granny" onclick="window.location.href='pages/game-pages/granny.html'"">Granny</button>
-          <button class="button" data-title="Granny 2" onclick="window.location.href='pages/game-pages/granny2.html'"">Granny 2</button>
-          <button class="button" data-title="Ice Dodo" onclick="window.location.href='pages/game-pages/icedodo.html'"">Ice Dodo</button>
-          <button class="button" data-title="Clash of Vikings" onclick="window.location.href='pages/game-pages/clash.html'"">Clash of Vikings</button>
-          <button class="button" data-title="Agar.io" onclick="window.location.href='pages/game-pages/agario.html'"">Agar IO</button>
-          <button class="button" data-title="Awesome Tanks" onclick="window.location.href='pages/game-pages/awesome.html'"">Awesome Tanks</button>
-          <button class="button" data-title="Binding" onclick="window.location.href='pages/game-pages/binding.html'"">Binding Of Issac: Wrath of the Lamb</button>
-          <button class="button" data-title="Hollow Knight" onclick="window.location.href='pages/game-pages/silksong.html'"">Hollow Knight: Silksong (PICO-8 REMAKE)</button>
-          <button class="button" data-title="Basketball Stars" onclick="window.location.href='pages/game-pages/basketstars.html'"">Basketball Stars</button>
-          <button class="button" data-title="Football Bros" onclick="window.location.href='pages/game-pages/footbros.html'"">Football Bros</button>
-          <button class="button" data-title="Baseball Bros" onclick="window.location.href='pages/game-pages/basebros.html'"">Baseball Bros</button>
-          <button class="button" data-title="Basket Bros" onclick="window.location.href='pages/game-pages/basketbros.html'"">Basket Bros</button>
-          <button class="button" data-title="Snow Rider 3D" onclick="window.location.href='pages/game-pages/snowrider.html'"">Snow Rider 3D</button>
-          <button class="button" data-title="Stick Slasher" onclick="window.location.href='pages/game-pages/stickslasher.html'"">Stick Slasher</button>
-          <button class="button" data-title="Block Blast" onclick="window.location.href='pages/game-pages/blockblast.html'"">Block Blast</button>
-          <button class="button" data-title="Super Mario 64" onclick="window.location.href='pages/game-pages/supermario64.html'"">Super Mario 64</button>
-          <button class="button" data-title="They Are Coming" onclick="window.location.href='pages/game-pages/theycomin.html'"">They Are Coming</button>
-          <button class="button" data-title="Paper IO" onclick="window.location.href='pages/game-pages/paperio.html'"">Paper IO</button>
-          <button class="button" data-title="Gladdihoppers" onclick="window.location.href='pages/game-pages/gladdihoppers.html'"">Gladdihoppers</button>
-          <button class="button" data-title="Kindergarten" onclick="window.location.href='pages/game-pages/kinder.html'"">Kindergarten</button>
-          <button class="button" data-title="Kindergarten" onclick="window.location.href='pages/game-pages/kinder2.html'"">Kindergarten 2</button>
-          <button class="button" data-title="Kindergarten" onclick="window.location.href='pages/game-pages/kinder3.html'"">Kindergarten 3</button>
-          <button class="button" data-title="Silent Hill" onclick="window.location.href='pages/game-pages/silentps1.html'"">Silent Hill PS1</button>
-          <button class="button" data-title="Call of Duty" onclick="window.location.href='pages/game-pages/codmw4.html'"">Call of Duty 4 - Modern Warfare</button>
-          <button class="button" data-title="House of Hazards" onclick="window.location.href='pages/game-pages/hazard.html'"">House of Hazards</button>
-          -->
+          <button class="button" data-title="FNAF 2" onclick="window.location.href='pages/game-pages/fnaf2.html'">
+            <img loading="lazy" src="media/buttons/fnaf2.jpg" alt="Five Nights at Freddy's 2" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="FNAF 3" onclick="window.location.href='pages/game-pages/fnaf3.html'">
+            <img loading="lazy" src="media/buttons/fnaf3.jpg" alt="Five Nights at Freddy's 3" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="FNAF 4" onclick="window.location.href='pages/game-pages/fnaf4.html'">
+            <img loading="lazy" src="media/buttons/fnaf4.jpg" alt="Five Nights at Freddy's 4" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Hollow Knight" onclick="window.location.href='pages/game-pages/hollow.html'">
+            <img loading="lazy" src="media/buttons/hollow.jpg" alt="Hollow Knight" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Granny" onclick="window.location.href='pages/game-pages/granny.html'">
+            <img loading="lazy" src="media/buttons/granny.jpg" alt="Granny" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Granny 2" onclick="window.location.href='pages/game-pages/granny2.html'">
+            <img loading="lazy" src="media/buttons/granny2.jpg" alt="Granny 2" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Ice Dodo" onclick="window.location.href='pages/game-pages/icedodo.html'">
+            <img loading="lazy" src="media/buttons/icedodo.jpg" alt="Ice Dodo" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Clash of Vikings" onclick="window.location.href='pages/game-pages/clash.html'">
+            <img loading="lazy" src="media/buttons/clash.jpg" alt="Clash of Vikings" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Agar.io" onclick="window.location.href='pages/game-pages/agario.html'">
+            <img loading="lazy" src="media/buttons/agario.jpg" alt="Agar.io" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Awesome Tanks" onclick="window.location.href='pages/game-pages/awesome.html'">
+            <img loading="lazy" src="media/buttons/awesome.jpg" alt="Awesome Tanks" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Binding" onclick="window.location.href='pages/game-pages/binding.html'">
+            <img loading="lazy" src="media/buttons/binding.jpg" alt="Binding of Isaac: Wrath of the Lamb" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Silksong" onclick="window.location.href='pages/game-pages/silksong.html'">
+            <img loading="lazy" src="media/buttons/silksong.jpg" alt="Hollow Knight: Silksong" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Basketball Stars" onclick="window.location.href='pages/game-pages/basketstars.html'">
+            <img loading="lazy" src="media/buttons/basketstars.jpg" alt="Basketball Stars" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Football Bros" onclick="window.location.href='pages/game-pages/footbros.html'">
+            <img loading="lazy" src="media/buttons/footbros.jpg" alt="Football Bros" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Baseball Bros" onclick="window.location.href='pages/game-pages/basebros.html'">
+            <img loading="lazy" src="media/buttons/basebros.jpg" alt="Baseball Bros" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Basket Bros" onclick="window.location.href='pages/game-pages/basketbros.html'">
+            <img loading="lazy" src="media/buttons/basketbros.jpg" alt="Basket Bros" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Snow Rider 3D" onclick="window.location.href='pages/game-pages/snowrider.html'">
+            <img loading="lazy" src="media/buttons/snowrider.jpg" alt="Snow Rider 3D" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Stick Slasher" onclick="window.location.href='pages/game-pages/stickslasher.html'">
+            <img loading="lazy" src="media/buttons/stickslasher.jpg" alt="Stick Slasher" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Block Blast" onclick="window.location.href='pages/game-pages/blockblast.html'">
+            <img loading="lazy" src="media/buttons/blockblast.jpg" alt="Block Blast" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Super Mario 64" onclick="window.location.href='pages/game-pages/supermario64.html'">
+            <img loading="lazy" src="media/buttons/supermario64.jpg" alt="Super Mario 64" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="They Are Coming" onclick="window.location.href='pages/game-pages/theycomin.html'">
+            <img loading="lazy" src="media/buttons/theyarecoming.jpg" alt="They Are Coming" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Paper IO" onclick="window.location.href='pages/game-pages/paperio.html'">
+            <img loading="lazy" src="media/buttons/paperio.jpg" alt="Paper.io" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Gladdihoppers" onclick="window.location.href='pages/game-pages/gladdihoppers.html'">
+            <img loading="lazy" src="media/buttons/gladdihoppers.jpg" alt="Gladdihoppers" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Kindergarten" onclick="window.location.href='pages/game-pages/kinder.html'">
+            <img loading="lazy" src="media/buttons/kinder.jpg" alt="Kindergarten" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Kindergarten 2" onclick="window.location.href='pages/game-pages/kinder2.html'">
+            <img loading="lazy" src="media/buttons/kinder2.jpg" alt="Kindergarten 2" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Kindergarten 3" onclick="window.location.href='pages/game-pages/kinder3.html'">
+            <img loading="lazy" src="media/buttons/kinder3.jpg" alt="Kindergarten 3" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Silent Hill" onclick="window.location.href='pages/game-pages/silentps1.html'">
+            <img loading="lazy" src="media/buttons/silent.jpg" alt="Silent Hill" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="Call of Duty" onclick="window.location.href='pages/game-pages/codmw4.html'">
+            <img loading="lazy" src="media/buttons/codmw4.png" alt="Call of Duty 4 - Modern Warfare" style="width:130px;height:130px;">
+          </button>
+          <button class="button" data-title="House of Hazards" onclick="window.location.href='pages/game-pages/hazard.html'">
+            <img loading="lazy" src="media/buttons/hazard.png" alt="House of Hazards" style="width:130px;height:130px;">
+          </button>
         </div>
       </main>
     </div>
@@ -351,6 +412,32 @@
       }
     })();
 
+    // Recently played - direct DOM read (no fetch), cap 4, hide if <2
+    (function() {
+        var recent = [];
+        try { recent = JSON.parse(localStorage.getItem('dotgui_recent') || '[]'); } catch(e) { recent = []; }
+        if (!Array.isArray(recent) || recent.length < 2) return;
+        recent = recent.slice(0,4);
+        var box = document.getElementById('recent');
+        var btns = document.getElementById('recent-buttons');
+        var map = {};
+        document.querySelectorAll('#game-buttons .button').forEach(function(b){
+            var oc = b.getAttribute('onclick') || '';
+            var m = oc.match(/pages\/game-pages\/[^']+/);
+            if (!m) return;
+            var img = b.querySelector('img');
+            map[m[0]] = { title: b.getAttribute('data-title') || (img && img.alt) || m[0], img: img ? img.getAttribute('src') : null, alt: img ? (img.getAttribute('alt')||'') : '' };
+        });
+        btns.innerHTML=''; var shown=0;
+        recent.forEach(function(r){
+            var info = map[r.page]; if(!info) return;
+            var b=document.createElement('button'); b.className='button'; b.setAttribute('data-title', info.title);
+            b.onclick=(function(p){ return function(){ window.location.href=p; }; })(r.page);
+            if(info.img){ var im=document.createElement('img'); im.src=info.img; im.alt=info.alt||info.title; im.style='width:130px;height:130px;'; b.appendChild(im);} else b.textContent=info.title;
+            btns.appendChild(b); shown++;
+        });
+        if(shown>=2) box.style.display='';
+    })();
     // Random game - picks from all games, same tab
     function randomGame() {
       const buttons = document.querySelectorAll('#game-buttons .button');

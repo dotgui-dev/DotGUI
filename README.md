@@ -1,13 +1,11 @@
 <p align="center">
-  <img src="favicon.ico" alt="DotGUI Logo"/>
+  <img src="media/full.png" alt="DotGUI Logo"/>
 </p>
 
-# DotGUI (Formerly Zenithub, and before that, BlackoutGames.)
+# Formerly Zenithub, prior, BlackoutGames.
  
 DotGUI is an advanced game-site that features over 80+ games, a static scramjet proxy, tools, clean UI and UX, and high-quality updates that bring much needed changes. We also have the fastest fan-service of ANY site out there!
 - Join the discord server [here](https://discord.gg/U8tT8AazXb) to get access to insights into future updates, important information, report bugs into more detail, recieve more detailed help with problems, get links, and more.
-- (Please note there isn't any general channel in the server, and you can only talk in the bug report channel, being off topic = 1 week mute, and repeated offenses give you an unappealable ban from the server.)
-
 # Regarding any possibly copywrited games/tools :
 
 We do not own the rights to any of the games featured, we just host them for anyone who wants to play them. Most games are just requested by different people, and we just add them. Please do not take down our site for any games we have hosted, and instead, just open an issue to get us to remove it. 
@@ -34,6 +32,7 @@ Go to one of our OFFICIAL Links listed in the Discord Server.
 # Credits
 - Credits to all of the people who own the rights to the games, just open an issue to get a game taken down, just provide proof you own the game.
 - Credits to Mercury Workshop for Scramjet that I use for proxies
+- x8rr for the Scramjet implementation.
 - Credits to the following sources for the games:
   - UGS for the main games.
   - GN-Math for the Exotic games.

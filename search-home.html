@@ -9,7 +9,8 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: Outfit, system-ui, sans-serif;
-      background: linear-gradient(60deg, #066b99 20%, #00082e 90%);
+      background-color: #066b99;
+
       color: #b1e8fc;
       min-height: 100vh;
       display: flex;
@@ -45,26 +46,7 @@
     }
     #home-search input:focus { box-shadow: 0 0 0 2px #00eaff; }
     #home-search input::placeholder { color: #066b99; }
-    #quicklinks {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    #quicklinks button {
-      font-family: Outfit, sans-serif;
-      font-weight: 425;
-      font-size: 18px;
-      background: rgb(0, 0, 0);
-      color: rgb(0, 242, 255);
-      border: none;
-      border-radius: 15px;
-      padding: 0.8em 1.4em;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    #quicklinks button:hover { transform: translateY(-3px); }
-    #quicklinks button:active { transform: translateY(-1px); }
+
   </style>
 </head>
 <body>
@@ -72,12 +54,7 @@
   <form id="home-search">
     <input id="q" type="text" placeholder="Search or enter URL..." autocomplete="off" spellcheck="false">
   </form>
-  <div id="quicklinks">
-    <button data-url="https://www.youtube.com">YouTube</button>
-    <button data-url="https://www.twitch.tv">Twitch</button>
-    <button data-url="https://now.gg">Now.GG</button>
-    <button data-url="https://discord.com">Discord</button>
-  </div>
+
   <script>
     function tick() {
       var d = new Date();
@@ -103,9 +80,7 @@
       var url = resolve(document.getElementById('q').value);
       if (url) send(url);
     });
-    document.querySelectorAll('#quicklinks button').forEach(function(b) {
-      b.addEventListener('click', function() { send(b.getAttribute('data-url')); });
-    });
+
   </script>
 </body>
 </html>
