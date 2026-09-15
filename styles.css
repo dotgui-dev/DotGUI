@@ -5,11 +5,30 @@
 #random-text {
   color: #00f2ff;
 }
-#ntv_2103197 {
+.bidvertiser-side {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 84px;
+  z-index: 900;
+  width: 160px;
+  max-height: calc(100vh - 100px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.bidvertiser-side-left {
+  left: 8px;
+}
+
+.bidvertiser-side-right {
+  right: 8px;
+}
+
+@media (max-width: 1100px) {
+  .bidvertiser-side {
+    display: none;
+  }
 }
 body {
   margin: 0;
@@ -17,10 +36,15 @@ body {
   color: #b1e8fc;
   background-color: #00082e;
   background-image:
-    radial-gradient(1000px 600px at 12% 8%, rgba(0, 242, 255, 0.12), transparent 60%),
-    radial-gradient(900px 700px at 88% 92%, rgba(6, 107, 153, 0.35), transparent 60%),
+    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.55), transparent 72%),
+    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.62), transparent 72%),
+    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.42), transparent 72%),
+    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.5), transparent 72%),
     linear-gradient(160deg, #0a7fae 0%, #066b99 30%, #001a4d 70%, #00082e 100%);
+  background-size: 150% 150%;
+  background-position: 0% 0%;
   background-attachment: fixed;
+  animation: nav-page-lava 16s linear infinite;
   font-family: Outfit;
   display: flex;
   flex-direction: column;
@@ -43,6 +67,35 @@ body {
       color: rgb(255, 0, 0);
       color: rgb(1, 0, 45);
     }
+  }
+}
+
+@keyframes nav-page-lava {
+  0% {
+    background-position: 0% 0%;
+    background-size: 150% 150%;
+  }
+  25% {
+    background-position: 35% 20%;
+    background-size: 158% 158%;
+  }
+  50% {
+    background-position: 70% 55%;
+    background-size: 166% 166%;
+  }
+  75% {
+    background-position: 35% 85%;
+    background-size: 158% 158%;
+  }
+  100% {
+    background-position: 0% 0%;
+    background-size: 150% 150%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
   }
 }
 
@@ -82,6 +135,9 @@ body {
   transition: background-color 0.2s;
 }
 nav {
+  position: sticky;
+  top: 12px;
+  z-index: 1000;
   font-family: Outfit;
   display: flex;
   flex-wrap: wrap;

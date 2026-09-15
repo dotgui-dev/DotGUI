@@ -13,6 +13,15 @@
           gtag('js', new Date());
           gtag('config', 'G-Q919W0VJ1S');
       </script>
+    <style>
+      .game-section-divider {
+        width: min(90%, 900px);
+        height: 2px;
+        margin: 1.5rem auto;
+        background: rgba(0, 242, 255, 0.45);
+        box-shadow: 0 0 10px rgba(0, 242, 255, 0.25);
+      }
+    </style>
   </head>
   <body>
     <nav>
@@ -62,6 +71,7 @@
             <div id="recent-buttons"></div>
           </div>
         </div>
+        <div class="game-section-divider" aria-hidden="true"></div>
         <div id="game-buttons">
           <button class="button" data-title="Fruit Ninja" onclick="window.location.href='pages/game-pages/fruitninja.html'">
             <img loading="lazy" src="media/buttons/fruit.webp" alt="Fruit Ninja" style="width:130px;height:130px;">
@@ -357,6 +367,9 @@
           <button class="button" data-title="House of Hazards" onclick="window.location.href='pages/game-pages/hazard.html'">
             <img loading="lazy" src="media/buttons/hazard.png" alt="House of Hazards" style="width:130px;height:130px;">
           </button>
+          <button class="button" data-title="Getaway Shootout" onclick="window.location.href='pages/game-pages/getaway.html'">
+            <img loading="lazy" src="media/buttons/getaway.png" alt="Getaway Shootout" style="width:130px;height:130px;">
+          </button>
         </div>
       </main>
     </div>
@@ -410,6 +423,19 @@
         } else {
         favicon.href = 'favicon.ico';
       }
+    })();
+
+    (function() {
+      var gameButtons = document.getElementById('game-buttons');
+      Array.prototype.slice.call(gameButtons.querySelectorAll(':scope > .button'))
+        .sort(function(a, b) {
+          return (a.getAttribute('data-title') || '').localeCompare(
+            b.getAttribute('data-title') || '',
+            undefined,
+            { numeric: true, sensitivity: 'base' }
+          );
+        })
+        .forEach(function(button) { gameButtons.appendChild(button); });
     })();
 
     // Recently played - direct DOM read (no fetch), cap 4, hide if <2

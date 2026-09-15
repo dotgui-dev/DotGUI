@@ -15,6 +15,36 @@
       </script>
   </head>
   <body>
+    <div id="ntv_2103197_left" class="bidvertiser-side bidvertiser-side-left"></div>
+    <div id="ntv_2103197_right" class="bidvertiser-side bidvertiser-side-right"></div>
+    <script type="text/javascript">
+      (function(d) {
+        ["ntv_2103197_left", "ntv_2103197_right"].forEach(function(widgetId) {
+          var params = {
+            bvwidgetid: widgetId,
+            bvlinksownid: 2103197,
+            rows: 1,
+            cols: 1,
+            textpos: "below",
+            imagewidth: 150,
+            mobilecols: 1,
+            cb: (new Date()).getTime()
+          };
+          params.bvwidgetid += params.cb;
+          var slot = d.getElementById(widgetId);
+          slot.id = params.bvwidgetid;
+          var qs = Object.keys(params).map(function(key) {
+            return key + '=' + encodeURIComponent(params[key]);
+          }).join(String.fromCharCode(38));
+          var s = d.createElement('script');
+          s.type = 'text/javascript';
+          s.async = true;
+          s.src = (location.protocol === 'https:' ? 'https' : 'http') + "://cdn.hyperpromote.com/bidvertiser/tags/active/bdvws.js?" + qs;
+          d.getElementById(params.bvwidgetid).appendChild(s);
+        });
+      })(document);
+    </script>
+    <script src="ad-side-visibility.js"></script>
     <nav>
       <button type="button" class="nav-btn nav-home-btn"  onclick="location.href='start.html'">
         <img src="favicon.ico" width="40px" height="40px" alt="Home">

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>AgarIO</title>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-Q919W0VJ1S');
+        </script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #111;
+        position: relative;
+        min-height: 100vh;
+        box-sizing: border-box;
+    }
+    .game-embed {
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 60px);
+        border: none;
+        background: #222;
+    }
+    .taskbar {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 60px;
+        background: rgba(20,20,20,0.98);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 16px;
+        box-shadow: 0 -2px 8px #0008;
+        z-index: 100;
+        padding: 0 24px;
+    }
+    .taskbar button {
+        background: #222;
+        color: #fff;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 22px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-left: 8px;
+        transition: background 0.2s;
+    }
+    .taskbar button:hover {
+        background: #444;
+    }
+
+</style>
+</head>
+<body>
+
+    <embed id="gameEmbed" class="game-embed" src='../../game-embeds/getaway.html'></embed>
+    <div class="taskbar">
+      <button onclick="window.location.href='../../select.html'">Back</button>
+      <button onclick="window.location.reload()">Restart</button>
+      <button onclick="window.location.href='../../game-embeds/getaway.html'">Raw</button>
+      <button onclick="goFullscreen()">Fullscreen</button>
+    </div>
+        <script>
+            document.querySelector('.game-embed').focus();
+        </script>
+
+<script>
+(function() {
+  try {
+    var PAGE = 'pages/game-pages/getaway.html';
+    var TITLE = document.title || PAGE;
+    var raw = localStorage.getItem('dotgui_recent') || '[]';
+    var arr = JSON.parse(raw);
+    if (!Array.isArray(arr)) arr = [];
+    arr = arr.filter(function(r) { return r && r.page !== PAGE; });
+    arr.unshift({page: PAGE, title: TITLE});
+    arr = arr.slice(0, 4);
+    localStorage.setItem('dotgui_recent', JSON.stringify(arr));
+  } catch (e) {}
+})();
+</script>
+<script>
+function goFullscreen() {
+  var el = document.getElementById('gameEmbed');
+  if (!el) return;
+  try {
+    if (el.requestFullscreen) { el.requestFullscreen(); }
+    else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+    else if (el.msRequestFullscreen) { el.msRequestFullscreen(); }
+  } catch (e) { alert('Fullscreen blocked by browser.'); }
+}
+</script>
+<script>
+          // dotgui-panic: global panic key, guards typing
+          document.addEventListener('keydown', function(e) {
+            var t = e.target;
+            if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT' || t.isContentEditable)) return;
+            var key = '';
+            try { key = localStorage.getItem('dotgui_panic_key') || 'k'; } catch (err) { key = 'k'; }
+            if ((e.key || '').toLowerCase() !== (key || '').toLowerCase() || !key) return;
+            try {
+              document.title = 'Google';
+              var f = document.querySelector("link[rel~='icon']");
+              if (f) f.href = 'https://www.google.com/favicon.ico';
+            } catch (err) {}
+            var go = true, url = 'https://classroom.google.com';
+            try {
+              go = (localStorage.getItem('dotgui_panic_redirect') || 'true') === 'true';
+              url = localStorage.getItem('dotgui_panic_url') || url;
+            } catch (err) {}
+            if (go && url) window.location.href = url;
+          });
+        </script>
+</body>
+<script>
+    (function() {
+        const value = localStorage.getItem('tabCloaker') || 'default';
+        const favicon = document.querySelector("link[rel~='icon']") || (() => {
+            const link = document.createElement('link');
+            link.rel = 'icon';
+            document.head.appendChild(link);
+            return link;
+        })();
+        if (value === 'google') {
+            document.title = 'Google';
+            favicon.href = 'https://www.google.com/favicon.ico';
+        } else if (value === 'vocab') {
+          document.title = 'My Learning | Vocabulary.com';
+          favicon.href = 'https://www.vocabulary.com/favicon.ico';
+        } else if (value === 'canvas') {
+              document.title = 'Canvas';
+              favicon.href = 'https://canvas.instructure.com/favicon.ico';
+            } else if (value === 'drive') {
+              document.title = 'Google Drive';
+              favicon.href = 'https://drive.google.com/favicon.ico';
+            } else if (value === 'docs') {
+              document.title = 'Google Docs';
+              favicon.href = 'https://docs.google.com/favicon.ico';
+            } else {
+            favicon.href = '../../favicon.ico';
+        }
+    })();
+</script>
+</html>
