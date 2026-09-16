@@ -85,16 +85,19 @@ body {
   font-size: 1.1em;
   border-radius: 10px;
   border: none;
+  width: 420px;
+  max-width: 90vw;
   padding: 0.8em 1.5em;
   box-shadow: 0 2px 12px rgba(0, 100, 100, 0.25);
   outline: none;
   margin-bottom: 20px;
   background: #022c3a;
   color: #066b99;
-  transition: box-shadow 0.2s;
+  transition: width 0.2s ease, box-shadow 0.2s;
 }
 
 .search-bar:focus {
+  width: 700px;
   box-shadow: 0 4px 24px #00808055;
 }
 

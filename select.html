@@ -5,6 +5,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" href="styles.css" />
+    <meta name="monetag" content="cd3f6daab1950d56cc8284e65a83b1ba">
+    <script>(function(s){s.dataset.zone='11810591',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
         <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
       <script>
@@ -478,6 +480,7 @@
     function filterGames() {
       const input = document.getElementById('game-search').value.toLowerCase();
       const buttons = document.querySelectorAll('#game-buttons .button');
+      const isSearching = input.trim() !== '';
       let anyVisible = false;
       buttons.forEach(btn => {
         const title = btn.getAttribute('data-title').toLowerCase();
@@ -489,6 +492,8 @@
         }
       });
       document.getElementById('no-results-message').style.display = anyVisible ? 'none' : 'block';
+      document.getElementById('random-game').style.display = isSearching ? 'none' : '';
+      document.getElementById('recent').style.display = isSearching ? 'none' : '';
     }
   </script>
 </html>
