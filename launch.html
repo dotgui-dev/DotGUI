@@ -1,34 +1,77 @@
-<meta name="monetag" content="cd3f6daab1950d56cc8284e65a83b1ba">
-<script>(function(s){s.dataset.zone='11810591',s.src='https://nap5k.com/tag.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
-      <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Q919W0VJ1S');
-      </script>
-<script>
-function launch() {
-    var win = window.open ()
-    if (!win) {
-        alert("Popup blocked. Allow pop-ups and try again.")
-        return
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="monetag" content="cd3f6daab1950d56cc8284e65a83b1ba">
+  <title>Launch DotGUI</title>
+
+  <script>
+    (function (s) {
+      s.dataset.zone = '11810591';
+      s.src = 'https://nap5k.com/tag.min.js';
+    })(document.documentElement.appendChild(document.createElement('script')));
+  </script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q919W0VJ1S"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-Q919W0VJ1S');
+  </script>
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="games">
+    <main>
+      <h1>Ready to Launch?</h1>
+      <p>Click the button below to open DotGUI in about:blank. If nothing happens, allow pop-ups and try again.</p>
+      <button class="button" id="launch-button" type="button">Launch</button>
+    </main>
+  </div>
+
+  <script>
+    function launch() {
+      // This must run directly from the button click so browsers allow the popup.
+      const win = window.open('about:blank', '_blank');
+
+      if (!win) {
+        alert('Popup blocked. Allow pop-ups and try again.');
+        return;
+      }
+
+      // about:blank is same-origin, so load DotGUI into it immediately.
+      win.document.open();
+      win.document.write(`
+        <!doctype html>
+        <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>DotGUI</title>
+            <style>
+              html, body, iframe {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                border: 0;
+                overflow: hidden;
+              }
+            </style>
+          </head>
+          <body>
+            <iframe src="start.html" title="DotGUI"></iframe>
+          </body>
+        </html>
+      `);
+      win.document.close();
+      win.focus();
     }
-    var url = "start.html"
-    var iframe = win.document.createElement('iframe')
-    iframe.style.width = "100%"
-    iframe.style.height = "100%"
-    iframe.style.border = "none"
-    iframe.src = url
-    win.document.body.appendChild(iframe)
-}
-</script>
-<link rel="stylesheet" href="styles.css">
-<div id="games">
-<main>
-<h1>Ready to Launch?</h1>
-<p>Click the button below to open DotGUI in about:blank. If nothing happens, allow pop-ups and try again. Don't worry, we won't do anything to you, we just need it to launch the tab.</p>
-<button class="button" onclick="launch()">Launch</button>
-</main>
-</div>
+
+    document.getElementById('launch-button').addEventListener('click', launch);
+  </script>
+</body>
+</html>
