@@ -29,6 +29,17 @@ Go to one of our OFFICIAL Links listed in the Discord Server.
 5. Then, type `npx servor`
 6. This will start a new static site page.
 
+# Old Versions
+- [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1) - single-file build, 99 games plus 3 tools in one HTML file.
+- [V2.1.3](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.3)
+- [v2.1.2](https://github.com/dotgui-dev/DotGUI/releases/tag/v2.1.2)
+- [V2.1.1](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.1)
+- [V2.1.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.0)
+- [V2.0.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.0.0)
+- [V1.0.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V1.0.0)
+- [v0.3.0-beta](https://github.com/dotgui-dev/DotGUI/releases/tag/v0.3.0-beta)
+- [v0.1.0-beta](https://github.com/dotgui-dev/DotGUI/releases/tag/v0.1.0-beta)
+
 # Credits
 - Credits to all of the people who own the rights to the games, just open an issue to get a game taken down, just provide proof you own the game.
 - Credits to Mercury Workshop for Scramjet that I use for proxies
