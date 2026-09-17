@@ -7,10 +7,13 @@
   <title>Launch DotGUI</title>
 
   <script>
-    (function (s) {
+    (function () {
+      try { if (window.self !== window.top) return; } catch (e) { return; }
+      var s = document.createElement('script');
       s.dataset.zone = '11810591';
       s.src = 'https://nap5k.com/tag.min.js';
-    })(document.documentElement.appendChild(document.createElement('script')));
+      (document.documentElement || document.body).appendChild(s);
+    })();
   </script>
 
   <!-- Google tag (gtag.js) -->
