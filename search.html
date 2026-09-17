@@ -299,6 +299,11 @@
                 // yours becomes primary, Mercury becomes fallback, Anura is last.
                 let transport = null;
                 const wisps = ["wss://wisp.mercurywork.shop/", "wss://anura.pro/"];
+                try {
+                    const last = localStorage.getItem("dotgui_wisp");
+                    const at = wisps.indexOf(last);
+                    if (at > 0) { wisps.splice(at, 1); wisps.unshift(last); }
+                } catch (e) {}
                 let lastErr = null;
                 for (let i = 0; i < wisps.length; i++) {
                     try {
@@ -312,6 +317,7 @@
                             })
                         ]);
                         transport = t;
+                        try { localStorage.setItem("dotgui_wisp", wisps[i]); } catch (e) {}
                         break;
                     } catch (e) {
                         lastErr = e;
