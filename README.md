@@ -15,6 +15,9 @@ We do not own the rights to any of the games featured, we just host them for any
 
 Go to one of our OFFICIAL Links listed in the Discord Server.
 
+### Single-file build (one download, plays offline):
+Download [dotgui.html](https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html) from [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1), double-click, play. 99 games plus 3 tools in one file, no hosting needed.
+
 ### For Hosts: 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDotLYHiyou%2FDotGUI)
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/DotLYHiyou/DotGUI)
@@ -30,15 +33,7 @@ Go to one of our OFFICIAL Links listed in the Discord Server.
 6. This will start a new static site page.
 
 # Old Versions
-- [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1) - single-file build, 99 games plus 3 tools in one HTML file.
-- [V2.1.3](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.3)
-- [v2.1.2](https://github.com/dotgui-dev/DotGUI/releases/tag/v2.1.2)
-- [V2.1.1](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.1)
-- [V2.1.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.1.0)
-- [V2.0.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V2.0.0)
-- [V1.0.0](https://github.com/dotgui-dev/DotGUI/releases/tag/V1.0.0)
-- [v0.3.0-beta](https://github.com/dotgui-dev/DotGUI/releases/tag/v0.3.0-beta)
-- [v0.1.0-beta](https://github.com/dotgui-dev/DotGUI/releases/tag/v0.1.0-beta)
+- [Old Versions](https://github.com/dotgui-dev/DotGUI/releases/tag/Old-Versions) - retired version releases, consolidated in one place.
 
 # Credits
 - Credits to all of the people who own the rights to the games, just open an issue to get a game taken down, just provide proof you own the game.
