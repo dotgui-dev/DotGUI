@@ -49,7 +49,31 @@
     .button-container button { width:60px; height:60px; padding:10px; border-radius:12px; display:flex; justify-content:center; align-items:center; background:rgb(0,0,0); border:none; cursor:pointer; }
     .button-container button img { width:40px; height:40px; }
     .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#00f2ff; border:1px solid rgba(0,242,255,0.3); }
+    #changelogBtn { position:fixed; top:12px; left:12px; z-index:50; width:44px; height:44px; border-radius:12px; background:rgb(0,0,0); color:rgb(0,242,255); border:1px solid rgba(0,242,255,0.35); font-size:20px; cursor:pointer; font-family:Outfit,sans-serif; }
+    #changelogOverlay { position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center; background:rgba(1,15,21,0.8); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:1rem; }
+    #changelogOverlay[hidden] { display:none; }
+    .changelog-card { max-width:480px; width:100%; max-height:80vh; overflow:auto; background:rgba(1,15,21,0.95); border:1px solid rgba(0,242,255,0.35); border-radius:16px; padding:1.5rem 1.8rem; color:#b1e8fc; font-family:Outfit,sans-serif; text-align:left; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .changelog-card h2 { color:#00eaff; margin:0 0 0.6rem; font-size:1.4em; }
+    .changelog-card p { line-height:1.5; }
+    .changelog-card ul { padding-left:1.2em; line-height:1.7; margin:0; }
+    .changelog-close { float:right; background:none; border:none; color:#00eaff; font-size:1.3em; cursor:pointer; }
+    .changelog-card a { color:#00eaff; }
   </style>
+  <button id="changelogBtn" type="button" title="Changelog">!</button>
+  <div id="changelogOverlay" hidden>
+    <div class="changelog-card">
+      <button class="changelog-close" id="changelogClose" type="button">✕</button>
+      <h2>200 Member Special + Single File Version</h2>
+      <p>Hey ya'll! DotLYHiyou here with our FIRST in-page changelog! Here are some of the new features!</p>
+      <ul>
+        <li>Favorites: star any game to pin it to the top</li>
+        <li>This popup so you can see updates right here</li>
+        <li>3 new games: Oblivion Eve, OneShot and Retro Bowl College</li>
+        <li>Dark and Light themes</li>
+        <li><a href="https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html">Single File Version</a> (already live in releases)</li>
+      </ul>
+    </div>
+  </div>
   <div id="main">
     <main id="homestuff">
       <img src="media/full.png" width="250px" alt="DotGUI Logo">
@@ -95,6 +119,12 @@
             "Wish people used the latest DotGUI, but oh well",
         ];
         document.getElementById("random-text").textContent = texts[Math.floor(Math.random() * texts.length)];
+        (function() {
+          var ov = document.getElementById('changelogOverlay');
+          document.getElementById('changelogBtn').addEventListener('click', function() { ov.hidden = false; });
+          document.getElementById('changelogClose').addEventListener('click', function() { ov.hidden = true; });
+          ov.addEventListener('click', function(e) { if (e.target === ov) ov.hidden = true; });
+        })();
     </script>
 
     </main>
