@@ -427,17 +427,69 @@
       }
     })();
 
+    var DG_TITLES = {};
+    document.querySelectorAll('#game-buttons .button').forEach(function(b) {
+      DG_TITLES[b.getAttribute('data-title') || ''] = 1;
+    });
+    function dgLabel(b) {
+      var dt = b.getAttribute('data-title') || '';
+      var im = b.querySelector('img');
+      var al = im ? (im.getAttribute('alt') || '') : '';
+      if (al && al !== dt && !DG_TITLES[al]) return al;
+      return dt;
+    }
     (function() {
+      var favs = [];
+      try { favs = JSON.parse(localStorage.getItem('dotgui_favs') || '[]'); } catch(e) { favs = []; }
+      if (!Array.isArray(favs)) favs = [];
+      function isFav(p) { return favs.indexOf(p) !== -1; }
+      function saveFavs() { try { localStorage.setItem('dotgui_favs', JSON.stringify(favs)); } catch(e) {} }
+      function pageOf(b) {
+        var oc = b.getAttribute('onclick') || '';
+        var m = oc.match(/pages\/game-pages\/[^']+/) || oc.match(/pages\/tool-pages\/[^']+/);
+        return m ? m[0] : '';
+      }
       var gameButtons = document.getElementById('game-buttons');
-      Array.prototype.slice.call(gameButtons.querySelectorAll(':scope > .button'))
-        .sort(function(a, b) {
-          return (a.getAttribute('data-title') || '').localeCompare(
-            b.getAttribute('data-title') || '',
-            undefined,
-            { numeric: true, sensitivity: 'base' }
-          );
-        })
-        .forEach(function(button) { gameButtons.appendChild(button); });
+      Array.prototype.slice.call(gameButtons.querySelectorAll(':scope > .button')).forEach(function(b) {
+        var label = document.createElement('span');
+        label.className = 'tile-label';
+        label.textContent = dgLabel(b);
+        label.title = dgLabel(b);
+        b.appendChild(label);
+        var star = document.createElement('span');
+        star.className = 'fav-star' + (isFav(pageOf(b)) ? ' on' : '');
+        star.textContent = '★';
+        star.setAttribute('role', 'button');
+        star.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var p = pageOf(b);
+          if (!p) return;
+          var i = favs.indexOf(p);
+          if (i === -1) { favs.push(p); star.classList.add('on'); }
+          else { favs.splice(i, 1); star.classList.remove('on'); }
+          saveFavs();
+          sortTiles();
+        });
+        b.appendChild(star);
+      });
+      function alpha(a, b) {
+        return dgLabel(a).localeCompare(
+          dgLabel(b),
+          undefined,
+          { numeric: true, sensitivity: 'base' }
+        );
+      }
+      function sortTiles() {
+        Array.prototype.slice.call(gameButtons.querySelectorAll(':scope > .button'))
+          .sort(function(a, b) {
+            var fa = isFav(pageOf(a)) ? 0 : 1;
+            var fb = isFav(pageOf(b)) ? 0 : 1;
+            if (fa !== fb) return fa - fb;
+            return alpha(a, b);
+          })
+          .forEach(function(button) { gameButtons.appendChild(button); });
+      }
+      sortTiles();
     })();
 
     // Recently played - direct DOM read (no fetch), cap 4, hide if <2
@@ -454,15 +506,15 @@
             var m = oc.match(/pages\/game-pages\/[^']+/);
             if (!m) return;
             var img = b.querySelector('img');
-            map[m[0]] = { title: b.getAttribute('data-title') || (img && img.alt) || m[0], img: img ? img.getAttribute('src') : null, alt: img ? (img.getAttribute('alt')||'') : '' };
+            map[m[0]] = { title: dgLabel(b) || m[0], img: img ? img.getAttribute('src') : null, alt: img ? (img.getAttribute('alt')||'') : '' };
         });
         btns.innerHTML=''; var shown=0;
         recent.forEach(function(r){
-            var info = map[r.page]; if(!info) return;
-            var b=document.createElement('button'); b.className='button'; b.setAttribute('data-title', info.title);
-            b.onclick=(function(p){ return function(){ window.location.href=p; }; })(r.page);
-            if(info.img){ var im=document.createElement('img'); im.src=info.img; im.alt=info.alt||info.title; im.style='width:130px;height:130px;'; b.appendChild(im);} else b.textContent=info.title;
-            btns.appendChild(b); shown++;
+            var info = map[r.page]; if(!info || !info.img) return;
+            var im=document.createElement('img'); im.className='recent-thumb';
+            im.src=info.img; im.alt=info.title; im.title=info.title;
+            im.onclick=(function(p){ return function(){ window.location.href=p; }; })(r.page);
+            btns.appendChild(im); shown++;
         });
         if(shown>=2) box.style.display='';
     })();
@@ -483,7 +535,7 @@
       const isSearching = input.trim() !== '';
       let anyVisible = false;
       buttons.forEach(btn => {
-        const title = btn.getAttribute('data-title').toLowerCase();
+        const title = dgLabel(btn).toLowerCase();
         if (title.includes(input)) {
           btn.style.display = '';
           anyVisible = true;

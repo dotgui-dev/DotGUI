@@ -40,6 +40,7 @@
     <div id="games">
       <main>
         <h1>Tools</h1>
+        <div id="tool-buttons">
         <button class="button" onclick="window.location.href='pages/tool-pages/simplecalculator.html'">
           <img loading="lazy" src="media/tool-buttons/calc.jpg" alt="Calculator" style="width:130px;height:130px;">
         </button>
@@ -49,6 +50,7 @@
         <button class="button" onclick="window.location.href='pages/tool-pages/sandstone.html'">
           <img loading="lazy" src="media/tool-buttons/sandstone.png" alt="Sandstone" style="width:130px;height:130px;">
         </button>
+        </div>
       </main>
     </div>
   <script>
@@ -102,5 +104,15 @@
         favicon.href = 'favicon.ico';
       }
     })();
+  </script>
+  <script>
+    document.querySelectorAll('#tool-buttons .button').forEach(function(b) {
+      var im = b.querySelector('img');
+      var label = document.createElement('span');
+      label.className = 'tile-label';
+      label.textContent = im ? (im.getAttribute('alt') || '') : '';
+      label.title = label.textContent;
+      b.appendChild(label);
+    });
   </script>
 </html>

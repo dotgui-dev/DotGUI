@@ -262,3 +262,80 @@ p {
     opacity: 0;
   }
 }
+
+#game-buttons .button {
+  background: transparent;
+  padding: 0;
+  margin: 8px;
+}
+
+#game-buttons .button img {
+  margin: 0 auto;
+}
+
+#tool-buttons .button {
+  background: transparent;
+  padding: 0;
+  margin: 8px;
+}
+
+#tool-buttons .button img {
+  margin: 0 auto;
+}
+
+.tile-label {
+  display: block;
+  max-width: 130px;
+  margin: 4px auto 0;
+  color: rgb(0, 242, 255);
+  font-size: 14px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fav-star {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  color: #667;
+  font-size: 16px;
+  opacity: 0.55;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fav-star.on {
+  color: #ffd700;
+  opacity: 1;
+}
+
+#game-buttons .button:hover .fav-star {
+  opacity: 1;
+}
+
+#recent-buttons {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  justify-content: center;
+  padding: 8px;
+}
+
+.recent-thumb {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  cursor: pointer;
+  flex: 0 0 auto;
+  transition: all 0.2s;
+}
+
+.recent-thumb:hover {
+  transform: translateY(-3px);
+}
