@@ -18,6 +18,7 @@
       </script>
   </head>
   <body>
+    <script>try{var t=localStorage.getItem('dotgui_theme')||'classic';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
     <nav>
       <button type="button" class="nav-btn nav-home-btn" aria-current="page"  onclick="location.href='start.html'">
         <img src="favicon.ico" width="40px" height="40px" alt="Home">
@@ -40,6 +41,8 @@
     </nav>
   <style>
     #homestuff { display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center; min-height:60vh; justify-content:center; }
+    .site-logo-img { width:250px; }
+    .site-logo-text { display:none; font-family:Outfit,sans-serif; font-size:64px; font-weight:800; letter-spacing:2px; color:#063a5c; line-height:1; }
     .search-container { display:flex; gap:8px; justify-content:center; align-items:center; width:100%; max-width:560px; }
     .search-container input { flex:1; background:#022c3a; color:#b1e8fc; border:none; border-radius:10px; padding:0.8em 1.5em; font-family:Outfit,sans-serif; font-size:1.1em; outline:none; }
     .search-container input::placeholder { color:#066b99; }
@@ -76,7 +79,8 @@
   </div>
   <div id="main">
     <main id="homestuff">
-      <img src="media/full.png" width="250px" alt="DotGUI Logo">
+      <img class="site-logo-img" src="media/full.png" width="250px" alt="DotGUI Logo">
+      <div class="site-logo-text">DotGUI</div>
       <span class="update-badge">Patch Update • 9/14/2026</span>
       <div class="search-container">
         <input id="bar" type="text" placeholder="Search or enter URL..." autocomplete="off" spellcheck="false">

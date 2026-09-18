@@ -339,3 +339,49 @@ p {
 .recent-thumb:hover {
   transform: translateY(-3px);
 }
+
+body[data-theme="dark"] {
+  color: #b1e8fc;
+  background-color: #000;
+  background-image:
+    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.28), transparent 72%),
+    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.32), transparent 72%),
+    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.22), transparent 72%),
+    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.26), transparent 72%),
+    linear-gradient(160deg, #043a5c 0%, #032f4c 30%, #000a24 70%, #000000 100%);
+}
+
+body[data-theme="dark"] nav {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+body[data-theme="light"] {
+  color: #063a5c;
+  background-color: #e9f7fc;
+  background-image:
+    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 200, 220, 0.25), transparent 72%),
+    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(120, 190, 220, 0.3), transparent 72%),
+    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 200, 0.2), transparent 72%),
+    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(140, 200, 225, 0.25), transparent 72%),
+    linear-gradient(160deg, #bfe6f2 0%, #d8eff7 30%, #f2fafd 70%, #ffffff 100%);
+}
+
+body[data-theme="light"] .tile-label {
+  color: #04708f;
+}
+
+body[data-theme="light"] #random-text {
+  color: #04708f;
+}
+
+body[data-theme="light"] .site-logo-img {
+  display: none;
+}
+
+body[data-theme="light"] .site-logo-text {
+  display: block;
+}
+
+body[data-theme="light"] .setting-section {
+  background: rgba(255, 255, 255, 0.6);
+}

@@ -32,6 +32,7 @@
     </style>
   </head>
   <body>
+    <script>try{var t=localStorage.getItem('dotgui_theme')||'classic';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
     <nav>
       <button type="button" class="nav-btn nav-home-btn"  onclick="location.href='start.html'">
         <img src="favicon.ico" width="40px" height="40px" alt="Home">
@@ -83,6 +84,17 @@
           <div class="setting-row">
             <label for="panic-url">Redirect to:</label><br>
             <input id="panic-url" type="text" autocomplete="off" spellcheck="false">
+          </div>
+        </div>
+        <div class="setting-section">
+          <h2>Theme</h2>
+          <p class="desc">Classic is the default look. Dark pushes it to black, Light flips it for bright rooms.</p>
+          <div class="setting-row">
+            <select id="themePick" style="font-size:1em;padding:0.5em;">
+              <option value="classic">Classic</option>
+              <option value="dark">Dark</option>
+              <option value="light">Light</option>
+            </select>
           </div>
         </div>
         <div class="setting-section">
@@ -175,17 +187,37 @@
               localStorage.removeItem('tabCloaker');
               localStorage.removeItem('dotgui_recent');
               localStorage.removeItem('dotgui_favs');
+              localStorage.removeItem('dotgui_theme');
               localStorage.setItem('dotgui_panic_key', PANIC_DEFAULTS.key);
               localStorage.setItem('dotgui_panic_url', PANIC_DEFAULTS.url);
               localStorage.setItem('dotgui_panic_redirect', 'true');
             } catch (e) {}
             tabCloaker.value = 'default';
             setTabCloak('default');
+            themePick.value = 'classic';
+            applyTheme('classic');
             panicKey.value = PANIC_DEFAULTS.key;
             panicUrl.value = PANIC_DEFAULTS.url;
             panicRedirect.checked = true;
             refreshRecentCount();
             flash('All settings reset.');
+          });
+          var themePick = document.getElementById('themePick');
+          function applyTheme(v) {
+            try {
+              if (v === 'classic') { delete document.body.dataset.theme; }
+              else { document.body.dataset.theme = v; }
+            } catch (e) {}
+          }
+          var savedTheme = 'classic';
+          try { savedTheme = localStorage.getItem('dotgui_theme') || 'classic'; } catch (e) {}
+          themePick.value = savedTheme;
+          applyTheme(savedTheme);
+          themePick.addEventListener('change', function(e) {
+            var v = e.target.value;
+            try { localStorage.setItem('dotgui_theme', v); } catch (e) {}
+            applyTheme(v);
+            flash('Theme saved.');
           });
           var saved = localStorage.getItem('tabCloaker') || 'default';
           tabCloaker.value = saved;
