@@ -4,7 +4,7 @@
 
 # Formerly Zenithub, prior, BlackoutGames.
  
-DotGUI is an advanced game-site that features over 80+ games, a static scramjet proxy, tools, clean UI and UX, and high-quality updates that bring much needed changes. We also have the fastest fan-service of ANY site out there!
+DotGUI is an advanced game-site that features over 100+ games, a static scramjet proxy, tools, clean UI and UX, and high-quality updates that bring much needed changes. We also have the fastest fan-service of ANY site out there!
 - Join the discord server [here](https://discord.gg/U8tT8AazXb) to get access to insights into future updates, important information, report bugs into more detail, recieve more detailed help with problems, get links, and more.
 # Regarding any possibly copywrited games/tools :
 
@@ -18,7 +18,7 @@ Go to one of our OFFICIAL Links listed in the Discord Server.
 ### Single-file build (one download, plays offline):
 Download [dotgui.html](https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html) from [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1), double-click, play. 99 games plus 3 tools in one file, no hosting needed.
 
-### For Hosts: 
+### Deploy to other hosting providers for your own links:
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDotLYHiyou%2FDotGUI)
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/DotLYHiyou/DotGUI)
 [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DotLYHiyou/DotGUI)

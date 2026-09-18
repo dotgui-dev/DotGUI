@@ -11,15 +11,15 @@ body {
   color: #b1e8fc;
   background-color: #00082e;
   background-image:
-    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.55), transparent 72%),
-    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.62), transparent 72%),
-    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.42), transparent 72%),
-    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.5), transparent 72%),
+    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.7), transparent 72%),
+    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.75), transparent 72%),
+    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.55), transparent 72%),
+    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.62), transparent 72%),
     linear-gradient(160deg, #0a7fae 0%, #066b99 30%, #001a4d 70%, #00082e 100%);
   background-size: 150% 150%;
   background-position: 0% 0%;
   background-attachment: fixed;
-  animation: nav-page-lava 16s linear infinite;
+  animation: nav-page-lava 12s linear infinite;
   font-family: Outfit;
   display: flex;
   flex-direction: column;
@@ -51,16 +51,16 @@ body {
     background-size: 150% 150%;
   }
   25% {
-    background-position: 35% 20%;
-    background-size: 158% 158%;
+    background-position: 45% 25%;
+    background-size: 165% 165%;
   }
   50% {
-    background-position: 70% 55%;
-    background-size: 166% 166%;
+    background-position: 85% 60%;
+    background-size: 178% 178%;
   }
   75% {
-    background-position: 35% 85%;
-    background-size: 158% 158%;
+    background-position: 40% 90%;
+    background-size: 165% 165%;
   }
   100% {
     background-position: 0% 0%;
