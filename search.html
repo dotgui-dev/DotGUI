@@ -306,12 +306,11 @@
                     (await navigator.serviceWorker.ready).active;
 
                 // STEP 3: Connect a transport to a wisp server.
-                // Primary: Mercury, fallback: Anura. When you deploy your own,
-                // yours becomes primary, Mercury becomes fallback, Anura is last.
+                // Primary: first-party worker, fallbacks: Mercury, Anura.
                 let transport = null;
-                const wisps = ["wss://wisp.mercurywork.shop/", "wss://anura.pro/"];
+                const wisps = ["wss://wisp-server-workers.dotlyhiyou.workers.dev/", "wss://wisp.mercurywork.shop/", "wss://anura.pro/"];
                 try {
-                    const last = localStorage.getItem("dotgui_wisp");
+                    const last = localStorage.getItem("dotgui_wisp_v2");
                     const at = wisps.indexOf(last);
                     if (at > 0) { wisps.splice(at, 1); wisps.unshift(last); }
                 } catch (e) {}
@@ -328,7 +327,7 @@
                             })
                         ]);
                         transport = t;
-                        try { localStorage.setItem("dotgui_wisp", wisps[i]); } catch (e) {}
+                        try { localStorage.setItem("dotgui_wisp_v2", wisps[i]); } catch (e) {}
                         break;
                     } catch (e) {
                         lastErr = e;
