@@ -11,15 +11,8 @@ body {
   color: #b1e8fc;
   background-color: #00082e;
   background-image:
-    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.7), transparent 72%),
-    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.75), transparent 72%),
-    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.55), transparent 72%),
-    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.62), transparent 72%),
     linear-gradient(160deg, #0a7fae 0%, #066b99 30%, #001a4d 70%, #00082e 100%);
-  background-size: 150% 150%;
-  background-position: 0% 0%;
   background-attachment: fixed;
-  animation: nav-page-lava 12s linear infinite;
   font-family: Outfit;
   display: flex;
   flex-direction: column;
@@ -42,35 +35,6 @@ body {
       color: rgb(255, 0, 0);
       color: rgb(1, 0, 45);
     }
-  }
-}
-
-@keyframes nav-page-lava {
-  0% {
-    background-position: 0% 0%;
-    background-size: 150% 150%;
-  }
-  25% {
-    background-position: 45% 25%;
-    background-size: 165% 165%;
-  }
-  50% {
-    background-position: 85% 60%;
-    background-size: 178% 178%;
-  }
-  75% {
-    background-position: 40% 90%;
-    background-size: 165% 165%;
-  }
-  100% {
-    background-position: 0% 0%;
-    background-size: 150% 150%;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  body {
-    animation: none;
   }
 }
 
@@ -344,44 +308,70 @@ body[data-theme="dark"] {
   color: #b1e8fc;
   background-color: #000;
   background-image:
-    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 242, 255, 0.28), transparent 72%),
-    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(6, 107, 153, 0.32), transparent 72%),
-    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 210, 0.22), transparent 72%),
-    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(10, 127, 174, 0.26), transparent 72%),
     linear-gradient(160deg, #043a5c 0%, #032f4c 30%, #000a24 70%, #000000 100%);
 }
+
 
 body[data-theme="dark"] nav {
   background: rgba(0, 0, 0, 0.55);
 }
 
 body[data-theme="light"] {
-  color: #063a5c;
+  color: #000;
   background-color: #e9f7fc;
   background-image:
-    radial-gradient(ellipse 28% 42% at 14% 18%, rgba(0, 200, 220, 0.25), transparent 72%),
-    radial-gradient(ellipse 36% 26% at 82% 24%, rgba(120, 190, 220, 0.3), transparent 72%),
-    radial-gradient(ellipse 30% 44% at 72% 82%, rgba(0, 170, 200, 0.2), transparent 72%),
-    radial-gradient(ellipse 34% 24% at 22% 78%, rgba(140, 200, 225, 0.25), transparent 72%),
     linear-gradient(160deg, #bfe6f2 0%, #d8eff7 30%, #f2fafd 70%, #ffffff 100%);
 }
 
+
 body[data-theme="light"] .tile-label {
-  color: #04708f;
+  color: #000;
 }
 
 body[data-theme="light"] #random-text {
-  color: #04708f;
+  color: #000;
+}
+
+body[data-theme="light"] #settings-status {
+  color: #000;
 }
 
 body[data-theme="light"] .site-logo-img {
-  display: none;
-}
-
-body[data-theme="light"] .site-logo-text {
-  display: block;
+  filter: brightness(0);
 }
 
 body[data-theme="light"] .setting-section {
   background: rgba(255, 255, 255, 0.6);
+}
+
+body[data-theme="light"] p a {
+  color: #000;
+}
+
+body[data-theme="light"] p a:hover {
+  color: #000;
+}
+
+body[data-theme="light"] .search-bar {
+  background: #ffffff;
+  color: #000;
+  border: 1px solid rgba(4, 112, 143, 0.35);
+  box-shadow: 0 2px 12px rgba(4, 112, 143, 0.18);
+}
+
+body[data-theme="light"] nav {
+  background: rgba(10, 30, 42, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+body[data-theme="light"] #games button {
+  background-color: #ffffff;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+body[data-theme="light"] .link {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(4, 112, 143, 0.25);
 }
