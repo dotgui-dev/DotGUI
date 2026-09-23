@@ -375,3 +375,90 @@ body[data-theme="light"] .link {
   background-color: rgba(255, 255, 255, 0.7);
   border: 1px solid rgba(4, 112, 143, 0.25);
 }
+
+body[data-theme="primordial"] {
+  color: #fff;
+  background-color: #000;
+  background-image:
+    linear-gradient(160deg, #1a1a1a 0%, #0d0d0d 30%, #050505 70%, #000000 100%);
+}
+
+body[data-theme="primordial"] .tile-label {
+  color: #fff;
+}
+
+body[data-theme="primordial"] #random-text {
+  color: #fff;
+}
+
+body[data-theme="primordial"] #settings-status {
+  color: #fff;
+}
+
+body[data-theme="primordial"] p a {
+  color: #fff;
+}
+
+body[data-theme="primordial"] p a:hover {
+  color: #ccc;
+}
+
+body[data-theme="primordial"] .search-bar {
+  background: #0d0d0d;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 2px 12px rgba(255, 255, 255, 0.12);
+}
+
+body[data-theme="primordial"] #games button {
+  background-color: #0d0d0d;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+body[data-theme="primordial"] .link {
+  color: #fff;
+  background-color: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+body[data-theme="primordial"] .setting-section {
+  background: rgba(20, 20, 20, 0.8);
+}
+
+body[data-theme="primordial"] nav {
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+body[data-theme="primordial"] nav a,
+body[data-theme="primordial"] nav button,
+body[data-theme="primordial"] nav .nav-btn {
+  color: #fff;
+}
+
+body[data-theme="primordial"] #game-buttons .button img,
+body[data-theme="primordial"] #tool-buttons .button img,
+body[data-theme="primordial"] .recent-thumb,
+body[data-theme="primordial"] nav img {
+  filter: grayscale(1);
+}
+
+body[data-theme="primordial"] .fav-star.on {
+  color: #fff;
+}
+
+body[data-theme="primordial"] .site-logo-img {
+  display: none;
+}
+
+body[data-theme="primordial"] .site-logo-text {
+  display: block;
+  font-size: 0;
+  color: #fff;
+}
+
+body[data-theme="primordial"] .site-logo-text::after {
+  content: "BlackoutGames";
+  font-size: 64px;
+}

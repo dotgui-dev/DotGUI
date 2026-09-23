@@ -51,18 +51,25 @@
     .button-container { display:flex; gap:15px; justify-content:center; align-items:center; flex-wrap:wrap; }
     .button-container button { width:60px; height:60px; padding:10px; border-radius:12px; display:flex; justify-content:center; align-items:center; background:rgb(0,0,0); border:none; cursor:pointer; }
     .button-container button img { width:40px; height:40px; }
-    .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#00f2ff; border:1px solid rgba(0,242,255,0.3); }
-    #changelogBtn { position:fixed; top:12px; left:12px; z-index:50; width:44px; height:44px; border-radius:12px; background:rgb(0,0,0); color:rgb(0,242,255); border:1px solid rgba(0,242,255,0.35); font-size:20px; cursor:pointer; font-family:Outfit,sans-serif; }
+    .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#fff; border:1px solid rgba(0,242,255,0.3); }
+    #changelogBtn { position:fixed; top:12px; left:12px; z-index:50; width:44px; height:44px; border-radius:12px; background:#fff; color:#000; border:1px solid rgba(0,0,0,0.4); font-size:20px; font-weight:800; cursor:pointer; font-family:Outfit,sans-serif; animation:changelog-pulse 2s ease-in-out infinite; }
+    @keyframes changelog-pulse {
+      0%, 100% { box-shadow:0 0 0 0 rgba(0,242,255,0.5); }
+      50% { box-shadow:0 0 12px 3px rgba(0,242,255,0.5); }
+    }
+    #changelogBtn.seen { animation:none; }
+    #changelogBtn .changelog-dot { position:absolute; top:-4px; right:-4px; width:14px; height:14px; border-radius:50%; background:#ff3b3b; border:2px solid #000; }
+    #changelogBtn.seen .changelog-dot { display:none; }
     #changelogOverlay { position:fixed; inset:0; z-index:60; display:flex; align-items:center; justify-content:center; background:rgba(1,15,21,0.8); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); padding:1rem; }
     #changelogOverlay[hidden] { display:none; }
-    .changelog-card { max-width:480px; width:100%; max-height:80vh; overflow:auto; background:rgba(1,15,21,0.95); border:1px solid rgba(0,242,255,0.35); border-radius:16px; padding:1.5rem 1.8rem; color:#b1e8fc; font-family:Outfit,sans-serif; text-align:left; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
-    .changelog-card h2 { color:#00eaff; margin:0 0 0.6rem; font-size:1.4em; }
+    .changelog-card { max-width:480px; width:100%; max-height:80vh; overflow:auto; background:rgba(1,15,21,0.95); border:1px solid rgba(0,242,255,0.35); border-radius:16px; padding:1.5rem 1.8rem; color:#fff; font-family:Outfit,sans-serif; text-align:left; box-shadow:0 8px 32px rgba(0,0,0,0.5); }
+    .changelog-card h2 { color:#fff; margin:0 0 0.6rem; font-size:1.4em; }
     .changelog-card p { line-height:1.5; }
     .changelog-card ul { padding-left:1.2em; line-height:1.7; margin:0; }
-    .changelog-close { float:right; background:none; border:none; color:#00eaff; font-size:1.3em; cursor:pointer; }
-    .changelog-card a { color:#00eaff; }
+    .changelog-close { float:right; background:none; border:none; color:#fff; font-size:1.3em; cursor:pointer; }
+    .changelog-card a { color:#fff; }
   </style>
-  <button id="changelogBtn" type="button" title="Changelog">!</button>
+  <button id="changelogBtn" type="button" title="Changelog">!<span class="changelog-dot"></span></button>
   <div id="changelogOverlay" hidden>
     <div class="changelog-card">
       <button class="changelog-close" id="changelogClose" type="button">✕</button>
@@ -74,6 +81,11 @@
         <li>3 new games: Oblivion Eve, OneShot and Retro Bowl College</li>
         <li>Dark and Light themes</li>
         <li><a href="https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html">Single File Version</a> (already live in releases)</li>
+      </ul>
+      <h2>Primordial Theme</h2>
+      <ul>
+        <li>New black-and-white Primordial theme in Settings (Blackout throwback)</li>
+        <li>Changelog button now pulses with a notification dot for new updates</li>
       </ul>
     </div>
   </div>
@@ -125,7 +137,14 @@
         document.getElementById("random-text").textContent = texts[Math.floor(Math.random() * texts.length)];
         (function() {
           var ov = document.getElementById('changelogOverlay');
-          document.getElementById('changelogBtn').addEventListener('click', function() { ov.hidden = false; });
+          var btn = document.getElementById('changelogBtn');
+          var ver = '3';
+          try { if (localStorage.getItem('dotgui_changelog_seen') === ver) btn.classList.add('seen'); } catch (e) {}
+          btn.addEventListener('click', function() {
+            ov.hidden = false;
+            btn.classList.add('seen');
+            try { localStorage.setItem('dotgui_changelog_seen', ver); } catch (e) {}
+          });
           document.getElementById('changelogClose').addEventListener('click', function() { ov.hidden = true; });
           ov.addEventListener('click', function(e) { if (e.target === ov) ov.hidden = true; });
         })();
