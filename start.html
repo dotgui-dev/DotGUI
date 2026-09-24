@@ -68,25 +68,44 @@
     .changelog-card ul { padding-left:1.2em; line-height:1.7; margin:0; }
     .changelog-close { float:right; background:none; border:none; color:#fff; font-size:1.3em; cursor:pointer; }
     .changelog-card a { color:#fff; }
+    .changelog-body { display:flex; gap:1.2rem; }
+    .changelog-side { display:flex; flex-direction:column; gap:0.4rem; min-width:110px; }
+    .cl-tab { background:none; border:1px solid transparent; border-radius:8px; color:#fff; font-family:Outfit,sans-serif; font-size:0.95em; padding:0.4em 0.6em; cursor:pointer; text-align:left; }
+    .cl-tab.active { border-color:rgba(0,242,255,0.35); background:rgba(0,0,0,0.3); }
+    .changelog-main { flex:1; min-width:0; }
+    .cl-entry[hidden] { display:none; }
+    @media (max-width:480px) { .changelog-body { flex-direction:column; } .changelog-side { flex-direction:row; } }
   </style>
   <button id="changelogBtn" type="button" title="Changelog">!<span class="changelog-dot"></span></button>
   <div id="changelogOverlay" hidden>
     <div class="changelog-card">
       <button class="changelog-close" id="changelogClose" type="button">✕</button>
-      <h2>200 Member Special + Single File Version</h2>
-      <p>Hey ya'll! DotLYHiyou here with our FIRST in-page changelog! Here are some of the new features!</p>
-      <ul>
-        <li>Favorites: star any game to pin it to the top</li>
-        <li>This popup so you can see updates right here</li>
-        <li>3 new games: Oblivion Eve, OneShot and Retro Bowl College</li>
-        <li>Dark and Light themes</li>
-        <li><a href="https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html">Single File Version</a> (already live in releases)</li>
-      </ul>
-      <h2>Primordial Theme</h2>
-      <ul>
-        <li>New black-and-white Primordial theme in Settings (Blackout throwback)</li>
-        <li>Changelog button now pulses with a notification dot for new updates</li>
-      </ul>
+      <div class="changelog-body">
+        <div class="changelog-side">
+          <button class="cl-tab active" data-cl="cl-primordial" type="button">Primordial</button>
+          <button class="cl-tab" data-cl="cl-200" type="button">200 Member</button>
+        </div>
+        <div class="changelog-main">
+          <div class="cl-entry" id="cl-primordial">
+            <h2>Primordial Theme</h2>
+            <ul>
+              <li>New black-and-white Primordial theme in Settings (Blackout throwback)</li>
+              <li>Changelog button now pulses with a notification dot for new updates</li>
+            </ul>
+          </div>
+          <div class="cl-entry" id="cl-200" hidden>
+            <h2>200 Member Special + Single File Version</h2>
+            <p>Hey ya'll! DotLYHiyou here with our FIRST in-page changelog! Here are some of the new features!</p>
+            <ul>
+              <li>Favorites: star any game to pin it to the top</li>
+              <li>This popup so you can see updates right here</li>
+              <li>3 new games: Oblivion Eve, OneShot and Retro Bowl College</li>
+              <li>Dark and Light themes</li>
+              <li><a href="https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html">Single File Version</a> (already live in releases)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div id="main">
@@ -138,7 +157,7 @@
         (function() {
           var ov = document.getElementById('changelogOverlay');
           var btn = document.getElementById('changelogBtn');
-          var ver = '3';
+          var ver = '2';
           try { if (localStorage.getItem('dotgui_changelog_seen') === ver) btn.classList.add('seen'); } catch (e) {}
           btn.addEventListener('click', function() {
             ov.hidden = false;
@@ -147,6 +166,15 @@
           });
           document.getElementById('changelogClose').addEventListener('click', function() { ov.hidden = true; });
           ov.addEventListener('click', function(e) { if (e.target === ov) ov.hidden = true; });
+          var tabs = ov.querySelectorAll('.cl-tab');
+          Array.prototype.forEach.call(tabs, function(tab) {
+            tab.addEventListener('click', function() {
+              Array.prototype.forEach.call(tabs, function(t) { t.classList.remove('active'); });
+              tab.classList.add('active');
+              var entries = ov.querySelectorAll('.cl-entry');
+              Array.prototype.forEach.call(entries, function(en) { en.hidden = (en.id !== tab.getAttribute('data-cl')); });
+            });
+          });
         })();
     </script>
 
