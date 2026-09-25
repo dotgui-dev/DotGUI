@@ -43,3 +43,4 @@ Download [dotgui.html](https://github.com/dotgui-dev/DotGUI/releases/download/Si
   - UGS for the main games.
   - GN-Math for the Exotic games.
   - Other sources for the ones not directly on-site.
+  - 3kh0 for the bulk game sources.
