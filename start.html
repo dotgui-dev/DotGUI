@@ -82,19 +82,26 @@
       <button class="changelog-close" id="changelogClose" type="button">✕</button>
       <div class="changelog-body">
         <div class="changelog-side">
-          <button class="cl-tab active" data-cl="cl-primordial" type="button">Primordial</button>
+          <button class="cl-tab active" data-cl="cl-drops" type="button">Drops</button>
+          <button class="cl-tab" data-cl="cl-primordial" type="button">Primordial</button>
           <button class="cl-tab" data-cl="cl-200" type="button">200 Member</button>
         </div>
         <div class="changelog-main">
-          <div class="cl-entry" id="cl-primordial">
-            <h2>Primordial Theme</h2>
+          <div class="cl-entry" id="cl-drops">
+            <h2>Friday Game Drop <span class="update-badge">9/25/26</span></h2>
+            <ul>
+              <li>The Rest of Deltarune Chapters (NEEDS OWNERSHIP ON STEAM): open data.vinetrap.net in search, upload data.win, get a code, enter it in-game</li>
+            </ul>
+          </div>
+          <div class="cl-entry" id="cl-primordial" hidden>
+            <h2>Primordial Theme <span class="update-badge">9/23/26</span></h2>
             <ul>
               <li>New black-and-white Primordial theme in Settings (Blackout throwback)</li>
               <li>Changelog button now pulses with a notification dot for new updates</li>
             </ul>
           </div>
           <div class="cl-entry" id="cl-200" hidden>
-            <h2>200 Member Special + Single File Version</h2>
+            <h2>200 Member Special + Single File Version <span class="update-badge">9/18/26</span></h2>
             <p>Hey ya'll! DotLYHiyou here with our FIRST in-page changelog! Here are some of the new features!</p>
             <ul>
               <li>Favorites: star any game to pin it to the top</li>
@@ -112,7 +119,6 @@
     <main id="homestuff">
       <img class="site-logo-img" src="media/full.png" width="250px" alt="DotGUI Logo">
       <div class="site-logo-text">DotGUI</div>
-      <span class="update-badge">200 Member Special • 9/18/26</span>
       <div class="search-container">
         <input id="bar" type="text" placeholder="Search or enter URL..." autocomplete="off" spellcheck="false">
         <button onclick="nav()">Go</button>
