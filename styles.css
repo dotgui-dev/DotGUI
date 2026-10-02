@@ -548,3 +548,66 @@ body[data-theme="fall"] #games select {
   color: #4a2c14;
   border: 1px solid rgba(74, 44, 20, 0.3);
 }
+
+.ticker {
+  overflow: hidden;
+  white-space: nowrap;
+  width: 100%;
+  background: rgba(1, 15, 21, 0.55);
+  border-bottom: 1px solid rgba(0, 242, 255, 0.25);
+  padding: 0.4em 0;
+  font-family: Outfit, sans-serif;
+  font-size: 0.95em;
+  color: #b1e8fc;
+}
+
+.ticker-track {
+  display: inline-flex;
+  animation: ticker-scroll 25s linear infinite;
+}
+
+.ticker-track span {
+  padding-right: 3em;
+}
+
+.ticker-track a {
+  color: #00eaff;
+}
+
+.ticker:hover .ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  to { transform: translateX(-50%); }
+}
+
+body[data-theme="light"] .ticker {
+  background: rgba(255, 255, 255, 0.6);
+  border-bottom: 1px solid rgba(4, 112, 143, 0.25);
+  color: #000;
+}
+
+body[data-theme="light"] .ticker-track a {
+  color: #000;
+}
+
+body[data-theme="primordial"] .ticker {
+  background: rgba(0, 0, 0, 0.65);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+body[data-theme="primordial"] .ticker-track a {
+  color: #fff;
+}
+
+body[data-theme="fall"] .ticker {
+  background: rgba(255, 253, 246, 0.7);
+  border-bottom: 1px solid rgba(160, 90, 30, 0.4);
+  color: #4a2c14;
+}
+
+body[data-theme="fall"] .ticker-track a {
+  color: #a05a1e;
+}
