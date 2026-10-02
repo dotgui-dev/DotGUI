@@ -1,0 +1,131 @@
+
+#screen {
+	visibility: hidden;
+	font-family: "pixeled";
+	color: white;
+	background: rgba(0,0,0,0.3);
+	text-align: center;
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+}
+#map_text {
+	visibility: hidden;
+	font-family: sans-serif;
+	color: white;
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	border: 1px solid white;
+	bottom: 70px;
+	width: auto;
+	left: 40px;
+	right: 40px;
+	padding: 10px 0px;
+	border-radius: 100px;
+	font-size: 26px;
+}
+
+#backtomenu, #restart, #play_again {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 10px;
+}
+
+#backtomenu2, #fullscreen_btn {
+	position: fixed;
+	top: 10px;
+	right: 10px;
+	z-index: 30;
+	padding: 4px;
+	background: rgba(0,0,0,0);
+	color: white;
+	border: none;
+}
+#fullscreen_btn {
+	right: 70px;
+}
+
+
+#controls_reversed, #jump_enabled {
+	z-index: 29;
+	color: white;
+	position: fixed;
+	top: 40px;
+	bottom: 40px;
+	text-align: center;
+	color: white;
+	display: inline-block;
+
+	text-orientation: sideways;
+	writing-mode: vertical-rl;
+}
+
+#controls_reversed {
+	right: 20px;
+}
+#jump_enabled {
+	left: 20px;
+}
+
+#controls_reversed h2, #jump_enabled h2 {
+	font-size: 12px;
+}
+
+#controls_reversed svg, #jump_enabled svg {
+	vertical-align: middle;
+}
+
+
+
+#curr_time, #best_time {
+	font-family: "pixeled";
+	position: fixed;
+	left: 20px;
+	text-align: left;
+	z-index: 5;
+	color: white;
+	font-size: 12px;
+}
+#curr_time {
+	top: 20px;
+}
+#best_time {
+	top: 60px;
+}
+
+.button {
+	padding: 4px 10px;
+	margin: 2px 7px;
+	cursor: pointer;
+}
+.button, .button * {
+	font-family: "pixeled";
+	font-size: 20px;
+}
+#screen_dialog {
+	font-size: 28px;
+	padding: 20px 0px;
+	background: rgb(0,0,0);
+	background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.7035189075630253) 30%, rgba(0,0,0,0.6979166666666667) 70%, rgba(0,0,0,0) 100%);
+
+}
+#screen_map_name {
+	margin-top: 40px;
+	font-size: 28px;
+	line-height: 28px;
+}
+#screen_map_about {
+	font-size: 12px;
+	text-transform: uppercase;
+	font-style: italic;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
