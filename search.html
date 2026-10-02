@@ -173,6 +173,56 @@
         .blocked-card button:hover {
             background: #4df3ff;
         }
+
+        body[data-theme="fall"] {
+            background-color: #f6e8d3;
+            background-image:
+                linear-gradient(160deg, #e8c9a0 0%, #f2ddba 30%, #faf0dd 70%, #fff9ef 100%);
+            color: #4a2c14;
+        }
+
+        body[data-theme="fall"] .toolbar {
+            background: #fffdf6;
+            border: solid 1px rgba(160, 90, 30, 0.4);
+        }
+
+        body[data-theme="fall"] .toolbar button {
+            background: #4a2c14;
+            color: #ffd9a8;
+        }
+
+        body[data-theme="fall"] .toolbar button:hover {
+            background: #6b3f1d;
+        }
+
+        body[data-theme="fall"] .toolbar input {
+            background: #fffdf6;
+            color: #4a2c14;
+            border: solid 1px rgba(160, 90, 30, 0.4);
+        }
+
+        body[data-theme="fall"] .toolbar input:focus {
+            box-shadow: 0 0 0 2px #d2691e;
+        }
+
+        body[data-theme="fall"] .blocked-card {
+            color: #4a2c14;
+            background: rgba(255, 253, 246, 0.85);
+            border: 1px solid rgba(160, 90, 30, 0.4);
+        }
+
+        body[data-theme="fall"] .blocked-card h2 {
+            color: #a05a1e;
+        }
+
+        body[data-theme="fall"] .blocked-card button {
+            background: #d2691e;
+            color: #fff9ef;
+        }
+
+        body[data-theme="fall"] .blocked-card button:hover {
+            background: #e07b39;
+        }
     </style>
 </head>
 
@@ -237,7 +287,7 @@
 
     <script>
         // STEP 2: Pull the classes off the globals the scripts above set up.
-        try { var t = localStorage.getItem('dotgui_theme') || 'classic'; if (t !== 'classic') document.body.dataset.theme = t; } catch (e) {}
+        try { var t = localStorage.getItem('dotgui_theme') || 'fall'; if (t !== 'classic') document.body.dataset.theme = t; } catch (e) {}
         const { Controller } = $scramjetController;
         const { defaultConfig, Tap } = $scramjet;
         const EpoxyTransport = self.EpoxyTransport.default;

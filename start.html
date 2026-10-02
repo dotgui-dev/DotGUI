@@ -18,7 +18,7 @@
       </script>
   </head>
   <body>
-    <script>try{var t=localStorage.getItem('dotgui_theme')||'classic';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
+    <script>try{var t=localStorage.getItem('dotgui_theme')||'fall';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
     <nav>
       <button type="button" class="nav-btn nav-home-btn" aria-current="page"  onclick="location.href='start.html'">
         <img src="favicon.ico" width="40px" height="40px" alt="Home">
@@ -52,6 +52,12 @@
     .button-container button { width:60px; height:60px; padding:10px; border-radius:12px; display:flex; justify-content:center; align-items:center; background:rgb(0,0,0); border:none; cursor:pointer; }
     .button-container button img { width:40px; height:40px; }
     .update-badge { display:inline-block; font-size:0.85em; padding:0.3em 0.8em; border-radius:50px; background:rgba(0,0,0,0.3); color:#fff; border:1px solid rgba(0,242,255,0.3); }
+    body[data-theme="fall"] .search-container input { background:#fffdf6; color:#4a2c14; border:1px solid rgba(160,90,30,0.4); }
+    body[data-theme="fall"] .search-container input::placeholder { color:#a05a1e; }
+    body[data-theme="fall"] .search-container input:focus { box-shadow:0 0 0 2px #d2691e; }
+    body[data-theme="fall"] .search-container button { background:#4a2c14; color:#ffd9a8; }
+    body[data-theme="fall"] .update-badge { border:1px solid rgba(210,105,30,0.5); }
+    body[data-theme="fall"] .cl-tab.active { border-color:rgba(210,105,30,0.5); }
     #changelogBtn { position:fixed; top:12px; left:12px; z-index:50; width:44px; height:44px; border-radius:12px; background:#fff; color:#000; border:1px solid rgba(0,0,0,0.4); font-size:20px; font-weight:800; cursor:pointer; font-family:Outfit,sans-serif; animation:changelog-pulse 2s ease-in-out infinite; }
     @keyframes changelog-pulse {
       0%, 100% { box-shadow:0 0 0 0 rgba(0,242,255,0.5); }
@@ -82,12 +88,19 @@
       <button class="changelog-close" id="changelogClose" type="button">✕</button>
       <div class="changelog-body">
         <div class="changelog-side">
-          <button class="cl-tab active" data-cl="cl-drops" type="button">Drops</button>
+          <button class="cl-tab active" data-cl="cl-untitled" type="button">Untitled</button>
+          <button class="cl-tab" data-cl="cl-drops" type="button">Drops</button>
           <button class="cl-tab" data-cl="cl-primordial" type="button">Primordial</button>
           <button class="cl-tab" data-cl="cl-200" type="button">200 Member</button>
         </div>
         <div class="changelog-main">
-          <div class="cl-entry" id="cl-drops">
+          <div class="cl-entry" id="cl-untitled">
+            <h2>Untitled</h2>
+            <ul>
+              <li>New Fall theme, now the default until winter arrives</li>
+            </ul>
+          </div>
+          <div class="cl-entry" id="cl-drops" hidden>
             <h2>Friday Game Drop <span class="update-badge">9/25/26</span></h2>
             <ul>
               <li>The Rest of Deltarune Chapters (NEEDS OWNERSHIP ON STEAM): open data.vinetrap.net in search, upload data.win, get a code, enter it in-game</li>
@@ -164,7 +177,7 @@
         (function() {
           var ov = document.getElementById('changelogOverlay');
           var btn = document.getElementById('changelogBtn');
-          var ver = '2';
+          var ver = '3';
           try { if (localStorage.getItem('dotgui_changelog_seen') === ver) btn.classList.add('seen'); } catch (e) {}
           btn.addEventListener('click', function() {
             ov.hidden = false;

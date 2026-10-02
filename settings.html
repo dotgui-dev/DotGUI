@@ -32,7 +32,7 @@
     </style>
   </head>
   <body>
-    <script>try{var t=localStorage.getItem('dotgui_theme')||'classic';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
+    <script>try{var t=localStorage.getItem('dotgui_theme')||'fall';if(t!=='classic')document.body.dataset.theme=t;}catch(e){}</script>
     <nav>
       <button type="button" class="nav-btn nav-home-btn"  onclick="location.href='start.html'">
         <img src="favicon.ico" width="40px" height="40px" alt="Home">
@@ -94,6 +94,7 @@
 <option value="classic">Classic</option>
 <option value="dark">Dark</option>
 <option value="light">Light</option>
+<option value="fall">Fall</option>
 <option value="primordial">Primordial</option>
             </select>
           </div>
@@ -194,8 +195,8 @@
             } catch (e) {}
             tabCloaker.value = 'default';
             setTabCloak('default');
-            themePick.value = 'classic';
-            applyTheme('classic');
+            themePick.value = 'fall';
+            applyTheme('fall');
             panicKey.value = PANIC_DEFAULTS.key;
             panicUrl.value = PANIC_DEFAULTS.url;
             panicRedirect.checked = true;
@@ -209,8 +210,8 @@
               else { document.body.dataset.theme = v; }
             } catch (e) {}
           }
-          var savedTheme = 'classic';
-          try { savedTheme = localStorage.getItem('dotgui_theme') || 'classic'; } catch (e) {}
+          var savedTheme = 'fall';
+          try { savedTheme = localStorage.getItem('dotgui_theme') || 'fall'; } catch (e) {}
           themePick.value = savedTheme;
           applyTheme(savedTheme);
           themePick.addEventListener('change', function(e) {
