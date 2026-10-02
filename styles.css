@@ -563,7 +563,7 @@ body[data-theme="fall"] #games select {
 
 .ticker-track {
   display: inline-flex;
-  animation: ticker-scroll 25s linear infinite;
+  animation: ticker-scroll 20s linear infinite;
 }
 
 .ticker-track span {
