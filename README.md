@@ -1,46 +1,48 @@
 <p align="center">
-  <img src="media/full.png" alt="DotGUI Logo"/>
+  <img src="media/full.png" alt="DotGUI Logo" width="300"/>
 </p>
 
-# Formerly Zenithub, prior, BlackoutGames.
- 
-DotGUI is an advanced game-site that features over 100+ games, a static scramjet proxy, tools, clean UI and UX, and high-quality updates that bring much needed changes. We also have the fastest fan-service of ANY site out there!
-- Join the discord server [here](https://discord.gg/U8tT8AazXb) to get access to insights into future updates, important information, report bugs into more detail, recieve more detailed help with problems, get links, and more.
-# Regarding any possibly copywrited games/tools :
+<p align="center">A game site with 112 games and a proxied search, made for school users.
+Formerly Zenithub, prior BlackoutGames.</p>
 
-We do not own the rights to any of the games featured, we just host them for anyone who wants to play them. Most games are just requested by different people, and we just add them. Please do not take down our site for any games we have hosted, and instead, just open an issue to get us to remove it. 
-# Use Instructions:
+<p align="center">Join the <a href="https://discord.gg/U8tT8AazXb">Discord server</a> for official links, update news, and support. The Tester Program is out: one slot per filter stack, Tester role plus changelog credit plus early update access, new testers picked every month, and slots are evaporating fast.</p>
 
-### To use in the browser (No work needed): 
+<p align="center">
+  <img src="https://img.shields.io/badge/games-112-orange?style=flat-square" alt="112 games"/>
+  <img src="https://img.shields.io/badge/proxy-Scramjet-blue?style=flat-square" alt="Scramjet"/>
+</p>
 
-Go to one of our OFFICIAL Links listed in the Discord Server.
+# Features
 
-### Single-file build (one download, plays offline):
-Download [dotgui.html](https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html) from [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1), double-click, play. 99 games plus 3 tools in one file, no hosting needed.
+- 112 games and 2 tools
+- Proxied search powered by Scramjet
+- Themes: Classic, Dark, Light, Primordial
+  - Fall (Seasonal)
+- Favorites and recent games
 
-### Deploy to other hosting providers for your own links:
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FDotLYHiyou%2FDotGUI)
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/DotLYHiyou/DotGUI)
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/DotLYHiyou/DotGUI)
-- It is static, so you can deploy it to lots of static hosts.
+# Use instructions
 
-### For Github Codespaces use (or for anything like it, for example Codesandbox: fork the repo and open it in the app.)
-1. On the github repo, click the blue "Code" button.
-2. Then, click "Create Codespace on main"
-3. It will take a while to make. Once you are done, open a new terminal.
-4. Type `npm install` in the terminal to install dependencies.
-5. Then, type `npx servor`
-6. This will start a new static site page.
+Play through the Discord server links, or self-host your own copy.
+Deploy anywhere static with one click:
 
-# Old Versions
-- [Old Versions](https://github.com/dotgui-dev/DotGUI/releases/tag/Old-Versions) - retired version releases, consolidated in one place.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fdotgui-dev%2FDotGUI)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/dotgui-dev/DotGUI)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dotgui-dev/DotGUI)
+
+Single-file build: grab [dotgui.html](https://github.com/dotgui-dev/DotGUI/releases/download/Single-V1/dotgui.html) from [Single-V1](https://github.com/dotgui-dev/DotGUI/releases/tag/Single-V1), download and double-click, no hosting needed.
+
+Codespaces: fork the repo, open a Codespace, then `npm install` and `npx servor`.
+
+# Copyright and takedowns
+
+We do not own any of the games or tools hosted here. Most were added by request. If you own something on this site and want it removed, open an issue with proof of ownership and it will be taken down. (Not legal advice, just our policy.)
+
+# Old versions
+
+- [Old Versions](https://github.com/dotgui-dev/DotGUI/releases/tag/Old-Versions): retired releases, consolidated in one place.
 
 # Credits
-- Credits to all of the people who own the rights to the games, just open an issue to get a game taken down, just provide proof you own the game.
-- Credits to Mercury Workshop for Scramjet that I use for proxies
-- x8rr for the Scramjet implementation.
-- Credits to the following sources for the games:
-  - UGS for the main games.
-  - GN-Math for the Exotic games.
-  - Other sources for the ones not directly on-site.
-  - 3kh0 for the bulk game sources.
+
+- Game rights holders, via the takedown process above.
+- Mercury Workshop for Scramjet.
+- Game sources: UGS (main games), GN-Math (exotic games), plus individual request sources.
