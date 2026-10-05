@@ -464,89 +464,89 @@ body[data-theme="primordial"] .site-logo-text::after {
 }
 
 body[data-theme="fall"] {
-  color: #4a2c14;
-  background-color: #f6e8d3;
+  color: #ffe9c9;
+  background-color: #241105;
   background-image:
-    linear-gradient(160deg, #e8c9a0 0%, #f2ddba 30%, #faf0dd 70%, #fff9ef 100%);
+    linear-gradient(160deg, #9a5416 0%, #7a3f0e 30%, #4a2408 70%, #241105 100%);
 }
 
 body[data-theme="fall"] .tile-label {
-  color: #4a2c14;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] #random-text {
-  color: #4a2c14;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] #settings-status {
-  color: #a05a1e;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] .site-logo-img {
-  filter: brightness(0);
+  filter: none;
 }
 
 body[data-theme="fall"] .setting-section {
-  background: rgba(255, 251, 240, 0.65);
+  background: rgba(20, 10, 3, 0.55);
 }
 
 body[data-theme="fall"] p a {
-  color: #4a2c14;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] p a:hover {
-  color: #d2691e;
+  color: #ffc37e;
 }
 
 body[data-theme="fall"] .search-bar {
-  background: #fffdf6;
-  color: #4a2c14;
-  border: 1px solid rgba(160, 90, 30, 0.4);
-  box-shadow: 0 2px 12px rgba(160, 90, 30, 0.18);
+  background: #3a1c07;
+  color: #ffe9c9;
+  border: 1px solid rgba(240, 136, 42, 0.4);
+  box-shadow: 0 2px 12px rgba(240, 136, 42, 0.18);
 }
 
 body[data-theme="fall"] nav {
-  background: rgba(74, 44, 20, 0.55);
+  background: rgba(28, 14, 4, 0.55);
   border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 body[data-theme="fall"] #games button {
-  background-color: #fffdf6;
-  color: #4a2c14;
-  border: 1px solid rgba(74, 44, 20, 0.3);
+  background-color: #140a03;
+  color: #f0882a;
+  border: 1px solid rgba(240, 136, 42, 0.3);
 }
 
 body[data-theme="fall"] .link {
-  color: #4a2c14;
-  background-color: rgba(255, 253, 246, 0.75);
-  border: 1px solid rgba(160, 90, 30, 0.3);
+  color: #ffe9c9;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(240, 136, 42, 0.25);
 }
 
 body[data-theme="fall"] .search-bar:focus {
-  box-shadow: 0 4px 24px rgba(210, 105, 30, 0.35);
+  box-shadow: 0 4px 24px rgba(240, 136, 42, 0.35);
 }
 
 body[data-theme="fall"] nav a,
 body[data-theme="fall"] nav button,
 body[data-theme="fall"] nav .nav-btn {
-  color: #ffe9c9;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] nav a[aria-current="page"],
 body[data-theme="fall"] nav button[aria-current="page"],
 body[data-theme="fall"] nav .nav-btn[aria-current="page"] {
-  color: #fff9ef;
-  background-color: #d2691e;
+  color: #241105;
+  background-color: #ffa14d;
 }
 
 body[data-theme="fall"] nav .nav-home-btn[aria-current="page"] {
-  color: #fff9ef;
+  color: #ffa14d;
 }
 
 body[data-theme="fall"] #games select {
-  background-color: #fffdf6;
-  color: #4a2c14;
-  border: 1px solid rgba(74, 44, 20, 0.3);
+  background-color: #3a1c07;
+  color: #ffe9c9;
+  border: 1px solid rgba(240, 136, 42, 0.3);
 }
 
 .ticker {
@@ -563,7 +563,7 @@ body[data-theme="fall"] #games select {
 
 .ticker-track {
   display: inline-flex;
-  animation: ticker-scroll 20s linear infinite;
+  animation: ticker-scroll 35s linear infinite;
 }
 
 .ticker-track span {
@@ -603,11 +603,11 @@ body[data-theme="primordial"] .ticker-track a {
 }
 
 body[data-theme="fall"] .ticker {
-  background: rgba(255, 253, 246, 0.7);
-  border-bottom: 1px solid rgba(160, 90, 30, 0.4);
-  color: #4a2c14;
+  background: rgba(28, 14, 4, 0.6);
+  border-bottom: 1px solid rgba(240, 136, 42, 0.4);
+  color: #ffe9c9;
 }
 
 body[data-theme="fall"] .ticker-track a {
-  color: #a05a1e;
+  color: #ffa14d;
 }
